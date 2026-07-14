@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programación de Firmware — ESP32, STM32F, ATmega | CIRCUITO, Santa Ana CR</title>
+<meta name="description" content="Programación de firmware en C bare metal, Arduino y MicroPython para ESP32, STM32F y ATmega. Lógica de control, drivers y depuración. Santa Ana, Costa Rica.">
+<meta name="keywords" content="programación de firmware Costa Rica, bare metal C, Arduino, MicroPython, ESP32, STM32F4, ATmega, microcontroladores Santa Ana">
+<meta name="author" content="CIRCUITO">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.circuito.cr/firmware.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.circuito.cr/firmware.html">
+<meta property="og:title" content="Programación de Firmware — ESP32, STM32F, ATmega | CIRCUITO">
+<meta property="og:description" content="Bare metal C, Arduino y MicroPython para ESP32, STM32F y ATmega. Santa Ana, Costa Rica.">
+<meta property="og:image" content="https://www.circuito.cr/og-image.jpg">
+<meta property="og:locale" content="es_CR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Programación de Firmware — ESP32, STM32F, ATmega | CIRCUITO">
+<meta name="twitter:description" content="Bare metal C, Arduino y MicroPython para ESP32, STM32F y ATmega. Santa Ana, Costa Rica.">
+<meta name="twitter:image" content="https://www.circuito.cr/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Programación de firmware para microcontroladores",
+  "provider": {
+    "@type": "ElectronicsStore",
+    "name": "CIRCUITO",
+    "telephone": "+506-6324-9284",
+    "email": "kees.hessels@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Santa Ana Centro, a par de la Pops, casa dos altos, portón negro",
+      "addressLocality": "Santa Ana",
+      "addressRegion": "San José",
+      "addressCountry": "CR"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Santa Ana, Costa Rica"
+  },
+  "description": "Programación de firmware en C bare metal, Arduino y MicroPython para las plataformas ESP32, STM32F y ATmega."
+}
+</script>
+
+<style>
+  :root{
+    --bg:#11161a;
+    --panel:#171f24;
+    --line:#2a353c;
+    --copper:#c17a4a;
+    --copper-bright:#e6a468;
+    --green-bright:#49b98c;
+    --cream:#edeae0;
+    --muted:#8b98a0;
+    --amber:#e8a33d;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0; background:var(--bg); color:var(--cream); font-family:var(--sans);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  body::before{
+    content:""; position:fixed; inset:0;
+    background-image: radial-gradient(circle, rgba(139,152,160,0.10) 1px, transparent 1px);
+    background-size: 26px 26px; pointer-events:none; z-index:0;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--muted); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--amber); box-shadow:0 0 8px var(--amber); flex:none;
+  }
+
+  header{
+    position:sticky; top:0; z-index:50; background:rgba(17,22,26,0.86);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
+  .logo{
+    display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:700;
+    font-size:17px; letter-spacing:0.02em; text-decoration:none;
+  }
+  .logo .dot-g{color:var(--green-bright);}
+  .logo .dot-c{color:var(--copper-bright);}
+  .breadcrumb{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+  .breadcrumb a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
+  .navlinks{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-family:var(--mono); font-size:13px;}
+  .navlinks a{text-decoration:none; color:var(--muted); transition:color .2s;}
+  .navlinks a:hover, .navlinks a:focus-visible{color:var(--cream);}
+  .navlinks a:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
+  @media(max-width:780px){ .navlinks{display:none;} }
+
+  .hero{padding:72px 28px 80px;}
+  .hero h1{
+    font-family:var(--mono); font-weight:800; color:var(--copper-bright);
+    font-size:clamp(30px,5vw,50px); line-height:1.1; margin:20px 0 0; letter-spacing:-0.01em;
+  }
+  .hero p.lede{font-size:17px; color:var(--muted); max-width:600px; margin:22px 0 36px;}
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:13.5px; letter-spacing:0.03em; padding:14px 22px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px; border-radius:3px;
+    border:1px solid transparent; transition:transform .15s ease, background .15s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  .btn-copper{background:var(--copper); color:#241505; border-color:#d68d5e;}
+  .btn-copper:hover{background:#cf8a57; transform:translateY(-1px);}
+  .btn-ghost{background:transparent; color:var(--copper-bright); border-color:var(--copper);}
+  .btn-ghost:hover{background:rgba(193,122,74,0.12); transform:translateY(-1px);}
+
+  section{padding:80px 0; border-top:1px solid var(--line); scroll-margin-top:84px;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-family:var(--mono); font-size:clamp(24px,3.4vw,34px); margin:14px 0 12px; font-weight:700;}
+  .section-head p{color:var(--muted); font-size:15.5px; margin:0;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:26px 22px;
+    transition:transform .18s ease, border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-3px); border-color:var(--copper-bright);}
+  .card .icon{width:36px; height:36px; margin-bottom:16px; color:var(--copper-bright);}
+  .card h3{font-family:var(--mono); font-size:16px; margin:0 0 8px; font-weight:600;}
+  .card p{font-size:14px; color:var(--muted); margin:0;}
+  .card .chip{
+    display:inline-block; font-family:var(--mono); font-size:11px; color:var(--copper-bright);
+    border:1px solid var(--copper); border-radius:3px; padding:2px 8px; margin-top:12px; letter-spacing:0.04em;
+  }
+
+  /* platform table */
+  .plat-table{width:100%; border-collapse:collapse; font-size:14.5px;}
+  .plat-table th, .plat-table td{
+    text-align:left; padding:14px 16px; border-bottom:1px solid var(--line);
+  }
+  .plat-table th{
+    font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--muted);
+  }
+  .plat-table td{color:var(--cream);}
+  .plat-table tr:last-child td{border-bottom:none;}
+  .plat-wrap{overflow-x:auto; background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:6px 20px;}
+
+  #contacto .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;}
+  @media(max-width:800px){ #contacto .contact-grid{grid-template-columns:1fr;} }
+  .contact-info dl{display:grid; grid-template-columns:auto 1fr; gap:10px 18px; font-size:15px; margin:22px 0;}
+  .contact-info dt{font-family:var(--mono); color:var(--muted); font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em; align-self:start; padding-top:2px;}
+  .contact-info dd{margin:0;}
+  .contact-info dd a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
+
+  form{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:26px;}
+  .field{margin-bottom:16px;}
+  label{display:block; font-family:var(--mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted); margin-bottom:7px;}
+  input, select, textarea{
+    width:100%; background:var(--bg); border:1px solid var(--line); color:var(--cream);
+    padding:11px 12px; font-family:var(--sans); font-size:14.5px; border-radius:3px;
+  }
+  input:focus-visible, select:focus-visible, textarea:focus-visible{outline:2px solid var(--amber); outline-offset:1px;}
+  textarea{resize:vertical; min-height:90px;}
+  .submit{
+    width:100%; border:none; cursor:pointer; background:var(--amber); color:#1a1408;
+    font-family:var(--mono); font-weight:700; padding:13px; border-radius:3px; font-size:13.5px;
+    letter-spacing:0.04em; transition:filter .15s;
+  }
+  .submit:hover{filter:brightness(1.08);}
+  .submit:focus-visible{outline:2px solid var(--cream); outline-offset:3px;}
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 28px; font-family:var(--mono); font-size:12px;
+    color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; max-width:1120px; margin:0 auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo"><span class="dot-g">◍</span>CIRCUITO<span class="dot-c">◍</span></a>
+    <ul class="navlinks">
+      <li><a href="index.html#reparacion">Reparación</a></li>
+      <li><a href="diseno-iot-y-iiot.html">Diseño IoT\IIoT</a></li>
+      <li><a href="diseno-circuitos-y-placas-pcb.html#pcb-circuitos">Diseño PCB / Circuitos</a></li>
+      <li><a href="firmware.html">Firmware</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" style="border-top:none; padding-top:56px;">
+    <p class="breadcrumb"><a href="index.html">CIRCUITO</a> / Firmware</p>
+    <p class="eyebrow" style="margin-top:18px;">Servicio de diseño — Santa Ana, Costa Rica</p>
+    <h1>Le damos lógica a tu hardware.</h1>
+    <p class="lede">Programamos en C bare metal, Arduino y MicroPython para ESP32, STM32F y ATmega — a nivel de registros cuando el proyecto lo exige, o con un framework cuando la velocidad de desarrollo importa más.</p>
+    <div class="cta-row">
+      <a class="btn btn-copper" href="https://wa.me/50663249284?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20de%20firmware." target="_blank" rel="noopener">Cotizar por WhatsApp →</a>
+      <a class="btn btn-ghost" href="#contacto">Ver formulario</a>
+    </div>
+  </section>
+
+  <section id="plataformas">
+    <div class="section-head">
+      <p class="eyebrow">01 — Plataformas</p>
+      <h2>Microcontroladores con los que trabajamos</h2>
+      <p>Cada plataforma tiene su propio punto fuerte; elegimos la que mejor se ajusta a tu proyecto, no la que nos resulte más cómoda.</p>
+    </div>
+    <div class="plat-wrap">
+      <table class="plat-table">
+        <thead>
+          <tr><th>Plataforma</th><th>Se usa cuando</th><th>Enfoques posibles</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ESP32</strong></td>
+            <td>El proyecto necesita Wi-Fi, BLE o procesamiento con más margen.</td>
+            <td>Bare metal C, Arduino, MicroPython</td>
+          </tr>
+          <tr>
+            <td><strong>STM32F (serie F4 y similares)</strong></td>
+            <td>Se requiere control preciso en tiempo real o periféricos avanzados.</td>
+            <td>Bare metal C a nivel de registros/HAL</td>
+          </tr>
+          <tr>
+            <td><strong>ATmega (Arduino clásico)</strong></td>
+            <td>El proyecto es simple, de bajo costo, y no necesita conectividad.</td>
+            <td>Bare metal C, Arduino</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="enfoques">
+    <div class="section-head">
+      <p class="eyebrow">02 — Enfoques de programación</p>
+      <h2>Bare metal, Arduino o MicroPython</h2>
+      <p>El lenguaje y el framework se eligen según qué tan crítico es el rendimiento y qué tan rápido necesitás tener un prototipo funcionando.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="6" width="24" height="28" rx="2"/><line x1="13" y1="13" x2="27" y2="13"/><line x1="13" y1="19" x2="27" y2="19"/><line x1="13" y1="25" x2="21" y2="25"/></svg>
+        <h3>C bare metal</h3>
+        <p>Programación directa a nivel de registros, sin capas intermedias. Control total sobre el hardware y el máximo rendimiento.</p>
+        <span class="chip">STM32F · ESP32 · ATmega</span>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="10" y="10" width="20" height="20" rx="2"/><rect x="16" y="16" width="8" height="8"/><line x1="10" y1="16" x2="4" y2="16"/><line x1="10" y1="24" x2="4" y2="24"/><line x1="30" y1="16" x2="36" y2="16"/><line x1="30" y1="24" x2="36" y2="24"/></svg>
+        <h3>Arduino</h3>
+        <p>Desarrollo más rápido usando el framework y sus librerías, ideal para prototipos y proyectos de complejidad media.</p>
+        <span class="chip">ESP32 · ATmega</span>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4 L34 12 L34 28 L20 36 L6 28 L6 12 Z"/><line x1="20" y1="4" x2="20" y2="36"/></svg>
+        <h3>MicroPython</h3>
+        <p>Iteración rápida en Python directo sobre el microcontrolador, útil para pruebas de concepto y ajustes en campo.</p>
+        <span class="chip">ESP32</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="que-hacemos">
+    <div class="section-head">
+      <p class="eyebrow">03 — Qué programamos</p>
+      <h2>De la lógica de control a la depuración</h2>
+      <p>El código que hace que el circuito se comporte como necesitás, probado antes de la entrega.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="22" height="22" rx="3"/><circle cx="20" cy="20" r="4"/><line x1="20" y1="9" x2="20" y2="13"/><line x1="20" y1="27" x2="20" y2="31"/><line x1="9" y1="20" x2="13" y2="20"/><line x1="27" y1="20" x2="31" y2="20"/></svg>
+        <h3>Lógica de control</h3>
+        <p>El comportamiento del dispositivo: cómo reacciona a sensores, botones y eventos.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="4"/><circle cx="30" cy="10" r="4"/><circle cx="10" cy="30" r="4"/><circle cx="30" cy="30" r="4"/><line x1="14" y1="10" x2="26" y2="10"/><line x1="10" y1="14" x2="10" y2="26"/><line x1="30" y1="14" x2="30" y2="26"/><line x1="14" y1="30" x2="26" y2="30"/></svg>
+        <h3>Drivers de periféricos</h3>
+        <p>Comunicación con sensores y módulos por I2C, SPI, UART y otros buses.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 24 Q20 10 30 24" /><path d="M14 27 Q20 18 26 27"/><circle cx="20" cy="30" r="2.5" fill="currentColor" stroke="none"/></svg>
+        <h3>Actualizaciones y pruebas</h3>
+        <p>Depuración y actualizaciones de firmware antes y después de la entrega.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="section-head">
+      <p class="eyebrow">Contacto</p>
+      <h2>Contanos sobre tu proyecto</h2>
+      <p>Escribinos por WhatsApp para una respuesta rápida, o completá el formulario.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <dl>
+          <dt>WhatsApp</dt><dd><a href="https://wa.me/50663249284">+506 6324-9284</a></dd>
+          <dt>Correo</dt><dd><a href="mailto:kees.hessels@gmail.com">kees.hessels@gmail.com</a></dd>
+          <dt>Dirección</dt><dd>Santa Ana Centro, a par de la Pops<br>Casa dos altos, portón negro<br>Santa Ana, Costa Rica</dd>
+          <dt>Modalidad</dt><dd>Atención únicamente en el taller — por ahora no ofrecemos visitas a domicilio.</dd>
+          <dt>Horario</dt><dd>Lunes a viernes, 8:00 a.m. – 5:30 p.m.</dd>
+        </dl>
+      </div>
+      <form id="contactForm">
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" required>
+        </div>
+        <div class="field">
+          <label for="plataforma">Plataforma</label>
+          <select id="plataforma">
+            <option>ESP32</option>
+            <option>STM32F</option>
+            <option>ATmega</option>
+            <option>No estoy seguro</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mensaje">Contanos brevemente sobre el proyecto</label>
+          <textarea id="mensaje" required></textarea>
+        </div>
+        <button class="submit" type="submit">Enviar por WhatsApp</button>
+      </form>
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+          e.preventDefault();
+          const nombre = document.getElementById('nombre').value.trim();
+          const plataforma = document.getElementById('plataforma').value;
+          const mensaje = document.getElementById('mensaje').value.trim();
+          const texto = `Hola, soy ${nombre}.\nPlataforma: ${plataforma}\nProyecto: ${mensaje}`;
+          const url = `https://wa.me/50663249284?text=${encodeURIComponent(texto)}`;
+          window.open(url, '_blank');
+        });
+      </script>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 CIRCUITO — Firmware</span>
+  <span><a href="index.html">← Volver al inicio</a></span>
+</footer>
+
+</body>
+</html>
