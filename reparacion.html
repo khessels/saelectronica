@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reparación de Electrónica, Computadoras y Electrodomésticos | CIRCUITO, Santa Ana CR</title>
+<meta name="description" content="Reparamos televisores, computadoras, radios, lavadoras, refrigeradoras y electrodomésticos en general, con garantía escrita. Por ahora no reparamos celulares ni ofrecemos visitas a domicilio. Santa Ana, Costa Rica.">
+<meta name="keywords" content="reparación de electrodomésticos Santa Ana, reparación de computadoras Costa Rica, reparación de televisores, reparación de lavadoras, reparación de radios, taller de electrónica Santa Ana">
+<meta name="author" content="CIRCUITO">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.circuito.cr/reparacion.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.circuito.cr/reparacion.html">
+<meta property="og:title" content="Reparación de Electrónica, Computadoras y Electrodomésticos | CIRCUITO">
+<meta property="og:description" content="Televisores, computadoras, radios, lavadoras, refrigeradoras y más, con garantía escrita. Santa Ana, Costa Rica.">
+<meta property="og:image" content="https://www.circuito.cr/og-image.jpg">
+<meta property="og:locale" content="es_CR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Reparación de Electrónica, Computadoras y Electrodomésticos | CIRCUITO">
+<meta name="twitter:description" content="Televisores, computadoras, radios, lavadoras, refrigeradoras y más, con garantía escrita. Santa Ana, Costa Rica.">
+<meta name="twitter:image" content="https://www.circuito.cr/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Reparación de electrónica, computadoras y electrodomésticos",
+  "provider": {
+    "@type": "ElectronicsStore",
+    "name": "CIRCUITO",
+    "telephone": "+506-6324-9284",
+    "email": "kees.hessels@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Santa Ana Centro, a par de la Pops, casa dos altos, portón negro",
+      "addressLocality": "Santa Ana",
+      "addressRegion": "San José",
+      "addressCountry": "CR"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Santa Ana, Costa Rica"
+  },
+  "description": "Reparación de televisores, computadoras, radios, lavadoras, refrigeradoras y electrodomésticos en general. Servicio únicamente en el taller."
+}
+</script>
+
+<style>
+  :root{
+    --bg:#11161a;
+    --panel:#171f24;
+    --line:#2a353c;
+    --green:#1f5c43;
+    --green-bright:#49b98c;
+    --copper-bright:#e6a468;
+    --cream:#edeae0;
+    --muted:#8b98a0;
+    --amber:#e8a33d;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0; background:var(--bg); color:var(--cream); font-family:var(--sans);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  body::before{
+    content:""; position:fixed; inset:0;
+    background-image: radial-gradient(circle, rgba(139,152,160,0.10) 1px, transparent 1px);
+    background-size: 26px 26px; pointer-events:none; z-index:0;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--muted); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--amber); box-shadow:0 0 8px var(--amber); flex:none;
+  }
+
+  header{
+    position:sticky; top:0; z-index:50; background:rgba(17,22,26,0.86);
+    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
+  }
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
+  .logo{
+    display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:700;
+    font-size:17px; letter-spacing:0.02em; text-decoration:none;
+  }
+  .logo .dot-g{color:var(--green-bright);}
+  .logo .dot-c{color:var(--copper-bright);}
+  .breadcrumb{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+  .breadcrumb a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
+  .navlinks{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-family:var(--mono); font-size:13px;}
+  .navlinks a{text-decoration:none; color:var(--muted); transition:color .2s;}
+  .navlinks a:hover, .navlinks a:focus-visible{color:var(--cream);}
+  .navlinks a:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
+  @media(max-width:780px){ .navlinks{display:none;} }
+
+  .hero{padding:72px 28px 80px;}
+  .hero h1{
+    font-family:var(--mono); font-weight:800; color:var(--green-bright);
+    font-size:clamp(30px,5vw,50px); line-height:1.1; margin:20px 0 0; letter-spacing:-0.01em;
+  }
+  .hero p.lede{font-size:17px; color:var(--muted); max-width:600px; margin:22px 0 26px;}
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:13.5px; letter-spacing:0.03em; padding:14px 22px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px; border-radius:3px;
+    border:1px solid transparent; transition:transform .15s ease, background .15s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  .btn-green{background:var(--green); color:#eafff5; border-color:#2c7a5a;}
+  .btn-green:hover{background:#256d51; transform:translateY(-1px);}
+  .btn-ghost{background:transparent; color:var(--green-bright); border-color:var(--green);}
+  .btn-ghost:hover{background:rgba(73,185,140,0.12); transform:translateY(-1px);}
+
+  .notice{
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--amber);
+    border-radius:6px; padding:18px 20px; margin-top:8px; max-width:640px;
+  }
+  .notice svg{flex:none; width:20px; height:20px; color:var(--amber); margin-top:2px;}
+  .notice p{margin:0; font-size:14px; color:var(--muted);}
+  .notice strong{color:var(--cream);}
+
+  section{padding:80px 0; border-top:1px solid var(--line); scroll-margin-top:84px;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-family:var(--mono); font-size:clamp(24px,3.4vw,34px); margin:14px 0 12px; font-weight:700;}
+  .section-head p{color:var(--muted); font-size:15.5px; margin:0;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:24px 22px;
+    transition:transform .18s ease, border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-3px); border-color:var(--green-bright);}
+  .card .icon{width:34px; height:34px; margin-bottom:16px; color:var(--green-bright);}
+  .card h3{font-family:var(--mono); font-size:15.5px; margin:0 0 8px; font-weight:600;}
+  .card p{font-size:14px; color:var(--muted); margin:0;}
+
+  .taglist{display:flex; flex-wrap:wrap; gap:10px;}
+  .tag{
+    font-family:var(--mono); font-size:13px; color:var(--cream);
+    background:var(--panel); border:1px solid var(--line); border-radius:20px;
+    padding:9px 16px; transition:border-color .15s;
+  }
+  .tag:hover{border-color:var(--green-bright);}
+
+  .no-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;}
+  .no-card{
+    background:var(--panel); border:1px solid var(--line); border-left:3px solid #b1543f;
+    border-radius:6px; padding:22px 22px;
+  }
+  .no-card h3{font-family:var(--mono); font-size:15.5px; margin:0 0 8px; color:var(--cream);}
+  .no-card p{font-size:14px; color:var(--muted); margin:0;}
+
+  .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0;}
+  .step{padding:26px 22px 26px 0; border-right:1px solid var(--line);}
+  .step:last-child{border-right:none;}
+  .step .num{font-family:var(--mono); font-size:13px; color:var(--muted); letter-spacing:0.1em;}
+  .step h3{font-family:var(--mono); font-size:16px; margin:10px 0 8px;}
+  .step p{font-size:14px; color:var(--muted); margin:0;}
+  @media(max-width:760px){ .step{border-right:none; border-bottom:1px solid var(--line); padding:22px 0;} }
+
+  #contacto .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;}
+  @media(max-width:800px){ #contacto .contact-grid{grid-template-columns:1fr;} }
+  .contact-info dl{display:grid; grid-template-columns:auto 1fr; gap:10px 18px; font-size:15px; margin:22px 0;}
+  .contact-info dt{font-family:var(--mono); color:var(--muted); font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em; align-self:start; padding-top:2px;}
+  .contact-info dd{margin:0;}
+  .contact-info dd a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
+
+  form{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:26px;}
+  .field{margin-bottom:16px;}
+  label{display:block; font-family:var(--mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted); margin-bottom:7px;}
+  input, select, textarea{
+    width:100%; background:var(--bg); border:1px solid var(--line); color:var(--cream);
+    padding:11px 12px; font-family:var(--sans); font-size:14.5px; border-radius:3px;
+  }
+  input:focus-visible, select:focus-visible, textarea:focus-visible{outline:2px solid var(--amber); outline-offset:1px;}
+  textarea{resize:vertical; min-height:90px;}
+  .submit{
+    width:100%; border:none; cursor:pointer; background:var(--amber); color:#1a1408;
+    font-family:var(--mono); font-weight:700; padding:13px; border-radius:3px; font-size:13.5px;
+    letter-spacing:0.04em; transition:filter .15s;
+  }
+  .submit:hover{filter:brightness(1.08);}
+  .submit:focus-visible{outline:2px solid var(--cream); outline-offset:3px;}
+
+  footer{
+    border-top:1px solid var(--line); padding:26px 28px; font-family:var(--mono); font-size:12px;
+    color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; max-width:1120px; margin:0 auto;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo"><span class="dot-g">◍</span>CIRCUITO<span class="dot-c">◍</span></a>
+    <ul class="navlinks">
+      <li><a href="reparacion.html">Reparación</a></li>
+      <li><a href="diseno-iot-y-iiot.html">Diseño IoT\IIoT</a></li>
+      <li><a href="diseno-circuitos-y-placas-pcb.html#pcb-circuitos">Diseño PCB / Circuitos</a></li>
+      <li><a href="firmware.html">Firmware</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" style="border-top:none; padding-top:56px;">
+    <p class="breadcrumb"><a href="index.html">CIRCUITO</a> / Reparación</p>
+    <p class="eyebrow" style="margin-top:18px;">Servicio de reparación — Santa Ana, Costa Rica</p>
+    <h1>Reparamos lo que ya no enciende, no gira o no conecta.</h1>
+    <p class="lede">Diagnóstico técnico y reparación de electrónica doméstica, computadoras y electrodomésticos en general, con garantía escrita en cada trabajo.</p>
+
+    <div class="notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="13"/><circle cx="12" cy="16.3" r="0.6" fill="currentColor" stroke="none"/></svg>
+      <p><strong>Por ahora no reparamos celulares</strong> ni ofrecemos <strong>visitas a domicilio</strong>. Toda la atención es en el taller. Si tenés dudas sobre tu equipo, escribinos y te confirmamos si podemos ayudarte.</p>
+    </div>
+
+    <div class="cta-row" style="margin-top:28px;">
+      <a class="btn btn-green" href="https://wa.me/50663249284?text=Hola%2C%20quiero%20consultar%20por%20la%20reparación%20de%20un%20equipo." target="_blank" rel="noopener">Consultar por WhatsApp →</a>
+      <a class="btn btn-ghost" href="#contacto">Ver formulario</a>
+    </div>
+  </section>
+
+  <section id="principales">
+    <div class="section-head">
+      <p class="eyebrow">01 — Lo que más reparamos</p>
+      <h2>Electrónica doméstica y computadoras</h2>
+      <p>Diagnóstico y reparación con repuestos originales o equivalentes certificados.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="32" height="21" rx="2"/><line x1="14" y1="33" x2="26" y2="33"/><line x1="20" y1="28" x2="20" y2="33"/></svg>
+        <h3>Televisores</h3>
+        <p>LED, LCD y smart TV — pantalla, fuente de poder, placa principal y software.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="8" width="30" height="20" rx="2"/><line x1="12" y1="33" x2="28" y2="33"/><line x1="5" y1="24" x2="35" y2="24"/></svg>
+        <h3>Computadoras</h3>
+        <p>Laptops y equipos de escritorio — fuentes, pantallas, mantenimiento y fallas de encendido.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="14" width="24" height="16" rx="2"/><circle cx="14" cy="22" r="3"/><circle cx="26" cy="22" r="3"/><line x1="16" y1="14" x2="16" y2="9"/><line x1="24" y1="14" x2="24" y2="9"/></svg>
+        <h3>Radios</h3>
+        <p>Radios analógicos y digitales, equipos de banda y receptores.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="4" width="26" height="32" rx="3"/><circle cx="20" cy="21" r="9"/><circle cx="20" cy="21" r="3"/><line x1="12" y1="9" x2="16" y2="9"/></svg>
+        <h3>Lavadoras</h3>
+        <p>Motores, tarjetas de control, bombas de drenaje y fallas de centrifugado.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="3" width="22" height="34" rx="2"/><line x1="9" y1="17" x2="31" y2="17"/><line x1="13" y1="7" x2="13" y2="12"/><line x1="13" y1="21" x2="13" y2="26"/></svg>
+        <h3>Refrigeradoras</h3>
+        <p>Sistemas de enfriamiento, termostatos, compresores y control electrónico.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="10" width="28" height="20" rx="2"/><circle cx="20" cy="20" r="5"/><line x1="11" y1="15" x2="13" y2="15"/></svg>
+        <h3>Equipos de audio</h3>
+        <p>Parlantes, receptores y minicomponentes — sin sonido, distorsión o fallas de encendido.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="otros">
+    <div class="section-head">
+      <p class="eyebrow">02 — También reparamos</p>
+      <h2>Otros equipos populares</h2>
+      <p>Estos son otros de los electrodomésticos y aparatos que suelen llegar al taller.</p>
+    </div>
+    <div class="taglist">
+      <span class="tag">Cafeteras</span>
+      <span class="tag">Licuadoras</span>
+      <span class="tag">Aspiradoras</span>
+      <span class="tag">Planchas</span>
+      <span class="tag">Ventiladores</span>
+      <span class="tag">Hornos eléctricos y tostadores</span>
+      <span class="tag">Freidoras de aire</span>
+      <span class="tag">Impresoras</span>
+      <span class="tag">Monitores</span>
+      <span class="tag">Consolas de videojuegos</span>
+      <span class="tag">Herramientas eléctricas</span>
+      <span class="tag">Cargadores y fuentes de poder</span>
+      <span class="tag">Router y equipos de red</span>
+      <span class="tag">Microondas</span>
+    </div>
+    <p style="font-size:13.5px; color:var(--muted); margin-top:20px;">¿No ves tu equipo en la lista? Escribinos igual — muchas reparaciones dependen del daño específico, no solo del tipo de aparato.</p>
+  </section>
+
+  <section id="no-reparamos">
+    <div class="section-head">
+      <p class="eyebrow">03 — Por ahora, fuera de alcance</p>
+      <h2>Lo que no hacemos todavía</h2>
+      <p>Preferimos ser claros desde el inicio para no hacerte perder el viaje.</p>
+    </div>
+    <div class="no-grid">
+      <div class="no-card">
+        <h3>Celulares y smartphones</h3>
+        <p>Por ahora no reparamos teléfonos celulares de ninguna marca. Estamos evaluando ofrecer este servicio más adelante.</p>
+      </div>
+      <div class="no-card">
+        <h3>Visitas a domicilio</h3>
+        <p>Toda la reparación se hace en el taller en Santa Ana. Por el momento no ofrecemos servicio a domicilio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <div class="section-head">
+      <p class="eyebrow">04 — Cómo trabajamos</p>
+      <h2>Cuatro pasos, siempre claros</h2>
+      <p>El mismo proceso ordenado para cualquier equipo que recibimos en el taller.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01 — RECEPCIÓN</div>
+        <h3>Diagnóstico</h3>
+        <p>Revisamos el equipo y determinamos la causa de la falla.</p>
+      </div>
+      <div class="step">
+        <div class="num">02 — PROPUESTA</div>
+        <h3>Cotización clara</h3>
+        <p>Presupuesto por escrito, con alcance, tiempos y repuestos necesarios.</p>
+      </div>
+      <div class="step">
+        <div class="num">03 — REPARACIÓN</div>
+        <h3>Trabajo en taller</h3>
+        <p>Reparación con pruebas de funcionamiento antes de la entrega.</p>
+      </div>
+      <div class="step">
+        <div class="num">04 — ENTREGA</div>
+        <h3>Garantía incluida</h3>
+        <p>Entregamos el equipo probado, con garantía por escrito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <div class="section-head">
+      <p class="eyebrow">Contacto</p>
+      <h2>Contanos qué se dañó</h2>
+      <p>Escribinos por WhatsApp para una respuesta rápida, o completá el formulario.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <dl>
+          <dt>WhatsApp</dt><dd><a href="https://wa.me/50663249284">+506 6324-9284</a></dd>
+          <dt>Correo</dt><dd><a href="mailto:kees.hessels@gmail.com">kees.hessels@gmail.com</a></dd>
+          <dt>Dirección</dt><dd>Santa Ana Centro, a par de la Pops<br>Casa dos altos, portón negro<br>Santa Ana, Costa Rica</dd>
+          <dt>Modalidad</dt><dd>Atención únicamente en el taller — por ahora no reparamos celulares ni ofrecemos visitas a domicilio.</dd>
+          <dt>Horario</dt><dd>Lunes a viernes, 8:00 a.m. – 5:30 p.m.</dd>
+        </dl>
+      </div>
+      <form id="contactForm">
+        <div class="field">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" required>
+        </div>
+        <div class="field">
+          <label for="equipo">Equipo a reparar</label>
+          <input id="equipo" type="text" placeholder="Ej. lavadora, televisor, laptop..." required>
+        </div>
+        <div class="field">
+          <label for="mensaje">Contanos qué le pasa</label>
+          <textarea id="mensaje" required></textarea>
+        </div>
+        <button class="submit" type="submit">Enviar por WhatsApp</button>
+      </form>
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e){
+          e.preventDefault();
+          const nombre = document.getElementById('nombre').value.trim();
+          const equipo = document.getElementById('equipo').value.trim();
+          const mensaje = document.getElementById('mensaje').value.trim();
+          const texto = `Hola, soy ${nombre}.\nEquipo: ${equipo}\nFalla: ${mensaje}`;
+          const url = `https://wa.me/50663249284?text=${encodeURIComponent(texto)}`;
+          window.open(url, '_blank');
+        });
+      </script>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 CIRCUITO — Reparación</span>
+  <span><a href="index.html">← Volver al inicio</a></span>
+</footer>
+
+</body>
+</html>
