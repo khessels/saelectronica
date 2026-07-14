@@ -93,24 +93,18 @@
     background:var(--amber); box-shadow:0 0 8px var(--amber); flex:none;
   }
 
-  header{
-    position:sticky; top:0; z-index:50; background:rgba(17,22,26,0.86);
-    backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
-  }
-  nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
-  .logo{
-    display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:700;
-    font-size:17px; letter-spacing:0.02em; text-decoration:none;
-  }
-  .logo .dot-g{color:var(--green-bright);}
-  .logo .dot-c{color:var(--copper-bright);}
-  .breadcrumb{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
-  .breadcrumb a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
-  .navlinks{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-family:var(--mono); font-size:13px;}
-  .navlinks a{text-decoration:none; color:var(--muted); transition:color .2s;}
-  .navlinks a:hover, .navlinks a:focus-visible{color:var(--cream);}
-  .navlinks a:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
-  @media(max-width:780px){ .navlinks{display:none;} }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media(max-width:780px){  }
 
   .hero{padding:72px 28px 80px;}
   .hero h1{
@@ -151,50 +145,12 @@
   .compare .col ul{margin:0; padding-left:18px; font-size:14px; color:var(--muted);}
   .compare .col li{margin-bottom:8px;}
 
-  #contacto .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;}
-  @media(max-width:800px){ #contacto .contact-grid{grid-template-columns:1fr;} }
-  .contact-info dl{display:grid; grid-template-columns:auto 1fr; gap:10px 18px; font-size:15px; margin:22px 0;}
-  .contact-info dt{font-family:var(--mono); color:var(--muted); font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em; align-self:start; padding-top:2px;}
-  .contact-info dd{margin:0;}
-  .contact-info dd a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
-
-  form{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:26px;}
-  .field{margin-bottom:16px;}
-  label{display:block; font-family:var(--mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted); margin-bottom:7px;}
-  input, select, textarea{
-    width:100%; background:var(--bg); border:1px solid var(--line); color:var(--cream);
-    padding:11px 12px; font-family:var(--sans); font-size:14.5px; border-radius:3px;
-  }
-  input:focus-visible, select:focus-visible, textarea:focus-visible{outline:2px solid var(--amber); outline-offset:1px;}
-  textarea{resize:vertical; min-height:90px;}
-  .submit{
-    width:100%; border:none; cursor:pointer; background:var(--amber); color:#1a1408;
-    font-family:var(--mono); font-weight:700; padding:13px; border-radius:3px; font-size:13.5px;
-    letter-spacing:0.04em; transition:filter .15s;
-  }
-  .submit:hover{filter:brightness(1.08);}
-  .submit:focus-visible{outline:2px solid var(--cream); outline-offset:3px;}
-
-  footer{
-    border-top:1px solid var(--line); padding:26px 28px; font-family:var(--mono); font-size:12px;
-    color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; max-width:1120px; margin:0 auto;
-  }
+  
 </style>
+<link rel="stylesheet" href="site-shared.css">
 </head>
-<body>
-
-<header>
-  <nav class="wrap">
-    <a href="index.html" class="logo"><span class="dot-g">◍</span>CIRCUITO<span class="dot-c">◍</span></a>
-    <ul class="navlinks">
-      <li><a href="reparacion.html">Reparación</a></li>
-      <li><a href="diseno-iot-y-iiot.html">Diseño IoT\IIoT</a></li>
-      <li><a href="diseno-circuitos-y-placas-pcb.html#pcb-circuitos">Diseño PCB / Circuitos</a></li>
-      <li><a href="firmware.html">Firmware</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+<body data-page="iot">
+<script src="nav.js"></script>
 
 <main class="wrap">
 
@@ -205,7 +161,7 @@
     <p class="lede">Sensores, conectividad inalámbrica y monitoreo remoto, ya sea para un producto de consumo (IoT) o para un equipo industrial que necesita reportar su estado (IIoT).</p>
     <div class="cta-row">
       <a class="btn btn-copper" href="https://wa.me/50663249284?text=Hola%2C%20quiero%20cotizar%20un%20diseño%20IoT%2FIIoT." target="_blank" rel="noopener">Cotizar por WhatsApp →</a>
-      <a class="btn btn-ghost" href="#contacto">Ver formulario</a>
+      <a class="btn btn-ghost" href="contacto.html">Ver formulario</a>
     </div>
   </section>
 
@@ -310,62 +266,8 @@
     </div>
   </section>
 
-  <section id="contacto">
-    <div class="section-head">
-      <p class="eyebrow">Contacto</p>
-      <h2>Contanos sobre tu proyecto</h2>
-      <p>Escribinos por WhatsApp para una respuesta rápida, o completá el formulario.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <dl>
-          <dt>WhatsApp</dt><dd><a href="https://wa.me/50663249284">+506 6324-9284</a></dd>
-          <dt>Correo</dt><dd><a href="mailto:kees.hessels@gmail.com">kees.hessels@gmail.com</a></dd>
-          <dt>Dirección</dt><dd>Santa Ana Centro, a par de la Pops<br>Casa dos altos, portón negro<br>Santa Ana, Costa Rica</dd>
-          <dt>Modalidad</dt><dd>Atención únicamente en el taller — por ahora no ofrecemos visitas a domicilio.</dd>
-          <dt>Horario</dt><dd>Lunes a viernes, 8:00 a.m. – 5:30 p.m.</dd>
-        </dl>
-      </div>
-      <form id="contactForm">
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" type="text" required>
-        </div>
-        <div class="field">
-          <label for="tipo">Qué necesitás</label>
-          <select id="tipo">
-            <option>Diseño IoT (consumo)</option>
-            <option>Diseño IIoT (industrial)</option>
-            <option>Sensores y conectividad</option>
-            <option>No estoy seguro</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensaje">Contanos brevemente sobre el proyecto</label>
-          <textarea id="mensaje" required></textarea>
-        </div>
-        <button class="submit" type="submit">Enviar por WhatsApp</button>
-      </form>
-      <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e){
-          e.preventDefault();
-          const nombre = document.getElementById('nombre').value.trim();
-          const tipo = document.getElementById('tipo').value;
-          const mensaje = document.getElementById('mensaje').value.trim();
-          const texto = `Hola, soy ${nombre}.\nNecesito: ${tipo}\nProyecto: ${mensaje}`;
-          const url = `https://wa.me/50663249284?text=${encodeURIComponent(texto)}`;
-          window.open(url, '_blank');
-        });
-      </script>
-    </div>
-  </section>
-
 </main>
 
-<footer>
-  <span>© 2026 CIRCUITO — Diseño IoT &amp; IIoT</span>
-  <span><a href="index.html">← Volver al inicio</a></span>
-</footer>
-
+<script src="footer.js"></script>
 </body>
 </html>

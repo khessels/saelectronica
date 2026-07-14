@@ -124,31 +124,15 @@
   }
 
   /* ---------- NAV ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(17,22,26,0.86);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  nav.wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    padding-top:16px; padding-bottom:16px;
-  }
-  .logo{
-    display:flex; align-items:center; gap:10px;
-    font-family:var(--mono); font-weight:700; font-size:17px;
-    letter-spacing:0.02em;
-    text-decoration:none;
-  }
-  .logo .dot-g{color:var(--green-bright);}
-  .logo .dot-c{color:var(--copper-bright);}
-  .navlinks{
-    display:flex; gap:28px; list-style:none; margin:0; padding:0;
-    font-family:var(--mono); font-size:13px; letter-spacing:0.03em;
-  }
-  .navlinks a{text-decoration:none; color:var(--muted); transition:color .2s;}
-  .navlinks a:hover, .navlinks a:focus-visible{color:var(--cream);}
-  .navlinks a:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   /* ---------- signature spine ---------- */
   .spine{
@@ -157,7 +141,7 @@
     display:none;
     z-index:0;
   }
-  @media(min-width:900px){ .spine{display:block;} .wrap{padding-left:88px;} nav.wrap{padding-left:28px;} }
+  @media(min-width:900px){ .spine{display:block;} .wrap{padding-left:88px;}  }
 
   /* ---------- HERO ---------- */
   .hero{padding:88px 0 96px; position:relative;}
@@ -255,52 +239,12 @@
   .trust .item b{display:block; font-family:var(--mono); font-size:15px; margin-bottom:4px;}
   .trust .item span{font-size:13.5px; color:var(--muted);}
 
-  /* ---------- CONTACT ---------- */
-  #contacto{padding-bottom:60px;}
-  .contact-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;}
-  @media(max-width:800px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-info dl{display:grid; grid-template-columns:auto 1fr; gap:10px 18px; font-size:15px; margin:22px 0;}
-  .contact-info dt{font-family:var(--mono); color:var(--muted); font-size:12.5px; text-transform:uppercase; letter-spacing:0.06em; align-self:start; padding-top:2px;}
-  .contact-info dd{margin:0;}
-  .contact-info dd a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
-
-  form{background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:26px;}
-  .field{margin-bottom:16px;}
-  label{display:block; font-family:var(--mono); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--muted); margin-bottom:7px;}
-  input, select, textarea{
-    width:100%; background:var(--bg); border:1px solid var(--line); color:var(--cream);
-    padding:11px 12px; font-family:var(--sans); font-size:14.5px; border-radius:3px;
-  }
-  input:focus-visible, select:focus-visible, textarea:focus-visible{outline:2px solid var(--amber); outline-offset:1px;}
-  textarea{resize:vertical; min-height:90px;}
-  .submit{
-    width:100%; border:none; cursor:pointer;
-    background:var(--amber); color:#1a1408; font-family:var(--mono); font-weight:700;
-    padding:13px; border-radius:3px; font-size:13.5px; letter-spacing:0.04em; transition:filter .15s;
-  }
-  .submit:hover{filter:brightness(1.08);}
-  .submit:focus-visible{outline:2px solid var(--cream); outline-offset:3px;}
-
-  footer{
-    border-top:1px solid var(--line); padding:26px 0; font-family:var(--mono); font-size:12px; color:var(--muted);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-  }
+  
 </style>
+<link rel="stylesheet" href="site-shared.css">
 </head>
 <body>
-
-<header>
-  <nav class="wrap">
-    <a href="#top" class="logo"><span class="dot-g">◍</span>CIRCUITO<span class="dot-c">◍</span></a>
-    <ul class="navlinks">
-      <li><a href="reparacion.html">Reparación</a></li>
-      <li><a href="diseno-iot-y-iiot.html">Diseño IoT\IIoT</a></li>
-      <li><a href="diseno-circuitos-y-placas-pcb.html#pcb-circuitos">Diseño PCB / Circuitos</a></li>
-      <li><a href="firmware.html">Firmware</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+<script src="nav.js"></script>
 
 <!-- signature spine: continuous trace, green -> copper, with pads at each section -->
 <svg class="spine" viewBox="0 0 64 1400" preserveAspectRatio="none" aria-hidden="true">
@@ -474,62 +418,8 @@
     </div>
   </section>
 
-  <section id="contacto">
-    <span class="pad" aria-hidden="true"></span>
-    <div class="section-head">
-      <p class="eyebrow">Contacto</p>
-      <h2>Contanos qué necesitás</h2>
-      <p>Escribinos por WhatsApp para una respuesta rápida, o completá el formulario.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <dl>
-          <dt>WhatsApp</dt><dd><a href="https://wa.me/50663249284">+506 6324-9284</a></dd>
-          <dt>Correo</dt><dd><a href="mailto:kees.hessels@gmail.com">kees.hessels@gmail.com</a></dd>
-          <dt>Dirección</dt><dd>Santa Ana Centro, a par de la Pops<br>Casa dos altos, portón negro<br>Santa Ana, Costa Rica</dd>
-          <dt>Modalidad</dt><dd>Servicio únicamente en el taller — por ahora no ofrecemos visitas a domicilio.</dd>
-          <dt>Horario</dt><dd>Lunes a viernes, 8:00 a.m. – 5:30 p.m.</dd>
-        </dl>
-      </div>
-      <form id="contactForm">
-        <div class="field">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" type="text" required>
-        </div>
-        <div class="field">
-          <label for="servicio">Servicio</label>
-          <select id="servicio">
-            <option>Reparación de electrodoméstico</option>
-            <option>Diseño IoT / PCB</option>
-            <option>No estoy seguro</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensaje">Contanos brevemente</label>
-          <textarea id="mensaje" required></textarea>
-        </div>
-        <button class="submit" type="submit">Enviar por WhatsApp</button>
-      </form>
-      <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e){
-          e.preventDefault();
-          const nombre = document.getElementById('nombre').value.trim();
-          const servicio = document.getElementById('servicio').value;
-          const mensaje = document.getElementById('mensaje').value.trim();
-          const texto = `Hola, soy ${nombre}.\nServicio: ${servicio}\nMensaje: ${mensaje}`;
-          const url = `https://wa.me/50663249284?text=${encodeURIComponent(texto)}`;
-          window.open(url, '_blank');
-        });
-      </script>
-    </div>
-  </section>
-
-  <footer>
-    <span>© 2026 CIRCUITO — Taller de electrónica</span>
-    <span>Santa Ana, Costa Rica</span>
-  </footer>
-
 </main>
 
+<script src="footer.js"></script>
 </body>
 </html>
