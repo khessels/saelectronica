@@ -23,14 +23,22 @@
     return '<li><a href="' + item.href + '"' + activeAttr + '>' + item.label + '</a></li>';
   }).join('');
 
+  var facebookIcon =
+    '<a class="social-link" href="https://www.facebook.com/crelectronicasa" target="_blank" rel="noopener" aria-label="Facebook de Electr\u00F3nica Santa Ana">' +
+      '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.891h-2.33v6.987C18.343 21.128 22 16.991 22 12z"/></svg>' +
+    '</a>';
+
   var html =
     '<header>' +
       '<nav class="wrap">' +
         '<a href="index.html" class="logo"><span class="dot-g">\u25CD</span>Electr\u00F3nica <br class="logo-break">Santa Ana<span class="dot-c">\u25CD</span></a>' +
-        '<button type="button" class="menu-toggle" aria-label="Abrir men\u00FA" aria-expanded="false" aria-controls="site-navlinks">' +
-          '<span></span><span></span><span></span>' +
-        '</button>' +
-        '<ul class="navlinks" id="site-navlinks">' + linksHTML + '</ul>' +
+        '<div class="nav-right">' +
+          facebookIcon +
+          '<button type="button" class="menu-toggle" aria-label="Abrir men\u00FA" aria-expanded="false" aria-controls="site-navlinks">' +
+            '<span></span><span></span><span></span>' +
+          '</button>' +
+          '<ul class="navlinks" id="site-navlinks">' + linksHTML + '</ul>' +
+        '</div>' +
       '</nav>' +
     '</header>';
 
