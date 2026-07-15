@@ -40,7 +40,45 @@ nav.wrap{display:flex; align-items:center; justify-content:space-between; paddin
   border-radius:1px;
 }
 
-@media(max-width:780px){ .navlinks{display:none;} }
+/* Hamburger button — hidden on desktop, shown on mobile */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width:36px; height:36px;
+  background:none; border:none; cursor:pointer; padding:0; flex:none;
+}
+.menu-toggle span{
+  display:block; width:22px; height:2px; background:var(--cream); border-radius:2px;
+  transition:transform .2s ease, opacity .2s ease;
+}
+.menu-toggle:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
+.menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.open span:nth-child(2){opacity:0;}
+.menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media(max-width:780px){
+  .menu-toggle{display:flex;}
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:100%; left:0; right:0;
+    flex-direction:column;
+    gap:0;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    padding:8px 28px 18px;
+    max-height:calc(100vh - 64px);
+    overflow-y:auto;
+  }
+  .navlinks.open{display:flex;}
+  .navlinks li{width:100%;}
+  .navlinks a{display:block; padding:14px 0; border-bottom:1px solid var(--line);}
+  .navlinks li:last-child a{border-bottom:none;}
+  .navlinks a.active::after{bottom:8px;}
+}
 
 footer{
   border-top:1px solid var(--line); padding:26px 28px; font-family:var(--mono); font-size:12px;

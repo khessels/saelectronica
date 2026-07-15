@@ -27,7 +27,10 @@
     '<header>' +
       '<nav class="wrap">' +
         '<a href="index.html" class="logo"><span class="dot-g">\u25CD</span>CIRCUITO<span class="dot-c">\u25CD</span></a>' +
-        '<ul class="navlinks">' + linksHTML + '</ul>' +
+        '<button type="button" class="menu-toggle" aria-label="Abrir men\u00FA" aria-expanded="false" aria-controls="site-navlinks">' +
+          '<span></span><span></span><span></span>' +
+        '</button>' +
+        '<ul class="navlinks" id="site-navlinks">' + linksHTML + '</ul>' +
       '</nav>' +
     '</header>';
 
@@ -37,4 +40,24 @@
 
   var thisScript = document.currentScript;
   thisScript.parentNode.insertBefore(headerEl, thisScript);
+
+  var toggleBtn = headerEl.querySelector('.menu-toggle');
+  var navlinksEl = headerEl.querySelector('.navlinks');
+
+  function setMenuOpen(isOpen){
+    navlinksEl.classList.toggle('open', isOpen);
+    toggleBtn.classList.toggle('open', isOpen);
+    toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggleBtn.setAttribute('aria-label', isOpen ? 'Cerrar men\u00FA' : 'Abrir men\u00FA');
+  }
+
+  toggleBtn.addEventListener('click', function(){
+    setMenuOpen(!navlinksEl.classList.contains('open'));
+  });
+
+  navlinksEl.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') {
+      setMenuOpen(false);
+    }
+  });
 })();
