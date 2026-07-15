@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyectos | Electrónica Santa Ana, CR</title>
+<meta name="description" content="Proyectos diseñados y construidos por Electrónica Santa Ana: desde equipos de producción de PCB hasta prototipos IoT. Santa Ana, Costa Rica.">
+<meta name="keywords" content="proyectos de electrónica, galvanoplastia de pulso inverso, diseño de PCB Costa Rica, portafolio electrónica Santa Ana">
+<meta name="author" content="Electrónica Santa Ana">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.circuito.cr/proyectos.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.circuito.cr/proyectos.html">
+<meta property="og:title" content="Proyectos | Electrónica Santa Ana">
+<meta property="og:description" content="Equipos y sistemas que hemos diseñado y construido, desde producción de PCB hasta prototipos IoT.">
+<meta property="og:image" content="https://www.circuito.cr/proyecto-galvanoplastia.png">
+<meta property="og:locale" content="es_CR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Proyectos | Electrónica Santa Ana">
+<meta name="twitter:description" content="Equipos y sistemas que hemos diseñado y construido, desde producción de PCB hasta prototipos IoT.">
+<meta name="twitter:image" content="https://www.circuito.cr/proyecto-galvanoplastia.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Máquina de galvanoplastia de pulso inverso para el desarrollo de PCB",
+  "creator": {
+    "@type": "ElectronicsStore",
+    "name": "Electrónica Santa Ana"
+  },
+  "about": "Equipo de electrónica de potencia que genera y controla el patrón de pulso inverso usado durante el electroplateado de placas PCB.",
+  "image": "https://www.circuito.cr/proyecto-galvanoplastia.png"
+}
+</script>
+
+<link rel="stylesheet" href="site-shared.css">
+<style>
+  :root{
+    --bg:#11161a;
+    --panel:#171f24;
+    --line:#2a353c;
+    --green-bright:#49b98c;
+    --copper:#c17a4a;
+    --copper-bright:#e6a468;
+    --cream:#edeae0;
+    --muted:#8b98a0;
+    --amber:#e8a33d;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0; background:var(--bg); color:var(--cream); font-family:var(--sans);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  body::before{
+    content:""; position:fixed; inset:0;
+    background-image: radial-gradient(circle, rgba(139,152,160,0.10) 1px, transparent 1px);
+    background-size: 26px 26px; pointer-events:none; z-index:0;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--muted); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--amber); box-shadow:0 0 8px var(--amber); flex:none;
+  }
+
+  .breadcrumb{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+  .breadcrumb a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
+
+  .hero{padding:72px 28px 64px;}
+  .hero h1{
+    font-family:var(--mono); font-weight:800; color:var(--copper-bright);
+    font-size:clamp(30px,5vw,50px); line-height:1.1; margin:20px 0 0; letter-spacing:-0.01em;
+  }
+  .hero p.lede{font-size:17px; color:var(--muted); max-width:640px; margin:22px 0 0;}
+
+  section{padding:0 0 84px; scroll-margin-top:84px;}
+  .section-head{max-width:680px; margin-bottom:36px;}
+  .section-head h2{font-family:var(--mono); font-size:clamp(22px,3vw,30px); margin:14px 0 12px; font-weight:700;}
+  .section-head p{color:var(--muted); font-size:15.5px; margin:0;}
+
+  /* Featured project */
+  .project-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden;
+  }
+  .project-media img{width:100%; display:block;}
+  .project-body{padding:32px;}
+  .project-body h3{font-family:var(--mono); font-size:clamp(20px,2.6vw,26px); margin:8px 0 16px; color:var(--cream);}
+  .project-body p{font-size:15px; color:var(--muted); margin:0 0 16px; max-width:70ch;}
+  .project-body p:last-child{margin-bottom:0;}
+
+  .spec-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px;
+    margin-top:24px;
+  }
+  .spec{
+    border:1px solid var(--line); border-radius:6px; padding:16px 18px; background:var(--bg);
+  }
+  .spec .spec-label{font-family:var(--mono); font-size:11.5px; color:var(--copper-bright); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;}
+  .spec .spec-value{font-size:14px; color:var(--cream);}
+
+  .timeline{list-style:none; margin:24px 0 0; padding:0; border-top:1px solid var(--line);}
+  .timeline li{
+    display:grid; grid-template-columns:120px 1fr; gap:16px;
+    padding:12px 0; border-bottom:1px solid var(--line); font-size:13.5px;
+  }
+  .timeline .tdate{font-family:var(--mono); color:var(--muted); white-space:nowrap;}
+  .timeline .tnote{color:var(--cream);}
+
+  .tag{
+    display:inline-block; font-family:var(--mono); font-size:11.5px; color:var(--copper-bright);
+    border:1px solid var(--copper); border-radius:20px; padding:4px 12px; margin:0 8px 8px 0;
+  }
+
+  /* Other projects placeholder */
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
+  .soon-card{
+    background:var(--panel); border:1px dashed var(--line); border-radius:8px;
+    padding:32px 24px; text-align:center; color:var(--muted);
+  }
+  .soon-card svg{width:30px; height:30px; margin:0 auto 14px; color:var(--muted);}
+  .soon-card h3{font-family:var(--mono); font-size:14.5px; color:var(--cream); margin:0 0 6px; font-weight:600;}
+  .soon-card p{font-size:13px; margin:0;}
+
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap; margin-top:32px;}
+  .btn{
+    font-family:var(--mono); font-size:13.5px; letter-spacing:0.03em; padding:14px 22px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px; border-radius:3px;
+    border:1px solid transparent; transition:transform .15s ease, background .15s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  .btn-copper{background:var(--copper); color:#241505; border-color:#d68d5e;}
+  .btn-copper:hover{background:#cf8a57; transform:translateY(-1px);}
+</style>
+</head>
+<body data-page="proyectos">
+<script src="nav.js"></script>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="breadcrumb"><a href="index.html">Electrónica Santa Ana</a> / Proyectos</p>
+    <p class="eyebrow" style="margin-top:18px;">Portafolio — Santa Ana, Costa Rica</p>
+    <h1>Proyectos que hemos diseñado y construido.</h1>
+    <p class="lede">Una muestra de los equipos y sistemas en los que estamos trabajando actualmente, y de los que iremos sumando con el tiempo.</p>
+  </section>
+
+  <section id="galvanoplastia">
+    <div class="section-head">
+      <p class="eyebrow">Proyecto actual — 2026</p>
+      <h2>Máquina de galvanoplastia de pulso inverso para el desarrollo de PCB</h2>
+      <p>Un equipo de electrónica de potencia diseñado y construido por nosotros, usado en nuestro propio proceso de producción de placas.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-media">
+        <img src="proyecto-galvanoplastia.png" alt="Placa electrónica de la máquina de galvanoplastia de pulso inverso, mostrando las secciones de regulación de voltaje, puente H, control de corriente y microcontrolador STM32">
+      </div>
+      <div class="project-body">
+        <span class="tag">Electrónica de potencia</span>
+        <span class="tag">Puente H · 24V / 10A</span>
+        <span class="tag">STM32G474</span>
+        <span class="tag">Diseño de PCB propio</span>
+
+        <h3>Qué hace</h3>
+        <p>Al electroplatear una placa PCB, el patrón eléctrico que se usa durante el proceso es tan importante como el químico: un pulso mal controlado produce un depósito de cobre desigual o de mala calidad. Este equipo genera y controla ese patrón — incluyendo pulsos inversos — para que el proceso de plateado sea preciso y repetible.</p>
+        <p>La placa mostrada es el resultado final que diseñamos y construimos: incluye su propia etapa de potencia (puente H con salida de hasta 10A a 24V), regulación de voltaje multi-riel (+24V, +5V, +3V3 y un riel negativo de -5V para los amplificadores operacionales), realimentación de voltaje y corriente para controlar el proceso en tiempo real, y un microcontrolador STM32G474 que coordina todo el ciclo.</p>
+
+        <h3 style="margin-top:32px;">Ficha técnica</h3>
+        <div class="spec-grid">
+          <div class="spec">
+            <div class="spec-label">Entrada</div>
+            <div class="spec-value">24V, hasta 10A</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Etapa de potencia</div>
+            <div class="spec-value">Puente H con salida de pulso inverso</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Control</div>
+            <div class="spec-value">STM32G474CEUx</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Regulación</div>
+            <div class="spec-value">+24V, +5V, +3V3, -5V (riel negativo)</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Realimentación</div>
+            <div class="spec-value">Voltaje y corriente, en tiempo real</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Interfaces</div>
+            <div class="spec-value">USB-C, serial, I2C</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Indicación</div>
+            <div class="spec-value">Piezo audible, botones de control</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Protección</div>
+            <div class="spec-value">Polyfuse en la entrada de 24V</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:32px;">Historial de revisiones</h3>
+        <p style="margin-bottom:0;">El diseño ha ido evolucionando por etapas, agregando funciones a medida que el proceso de producción lo fue exigiendo.</p>
+        <ul class="timeline">
+          <li><span class="tdate">Dic 8 '25</span><span class="tnote">Diseño inicial</span></li>
+          <li><span class="tdate">Ene 11 '26</span><span class="tnote">Se agregó tarjeta SD y se mejoró el layout</span></li>
+          <li><span class="tdate">May 23 '26</span><span class="tnote">Se agregó conector I2C</span></li>
+          <li><span class="tdate">Jun 27 '26</span><span class="tnote">Cambio en el diseño del puente H</span></li>
+          <li><span class="tdate">Jul 1 '26</span><span class="tnote">Se agregó retardo de habilitación (enable delay)</span></li>
+          <li><span class="tdate">Jul 5 '26</span><span class="tnote">Se agregó indicador piezo</span></li>
+          <li><span class="tdate">Jul 10 '26</span><span class="tnote">Se agregó lectura ADC</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="otros-proyectos">
+    <div class="section-head">
+      <p class="eyebrow">Próximos proyectos</p>
+      <h2>Más proyectos, en camino</h2>
+      <p>Este portafolio se irá actualizando con cada nuevo equipo que diseñemos y construyamos.</p>
+    </div>
+    <div class="grid">
+      <div class="soon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Próximamente</h3>
+        <p>Estamos preparando más proyectos para mostrar aquí.</p>
+      </div>
+      <div class="soon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Próximamente</h3>
+        <p>¿Tenés un proyecto en mente? Contanos qué necesitás.</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-copper" href="contacto.html">Hablemos de tu proyecto →</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="footer.js"></script>
+</body>
+</html>

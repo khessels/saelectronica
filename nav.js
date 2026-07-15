@@ -4,7 +4,7 @@
 
    Each page sets <body data-page="..."> to say which nav item
    should be highlighted. Recognized values:
-   "inicio", "reparacion", "iot", "pcb", "firmware", "contacto"
+   "inicio", "reparacion", "iot", "pcb", "firmware", "proyectos", "contacto"
    ============================================================ */
 (function () {
   var currentPage = document.body.getAttribute('data-page') || '';
@@ -15,6 +15,7 @@
     { id: 'iot', href: 'diseno-iot-y-iiot.html', label: 'Diseño IoT\\IIoT' },
     { id: 'pcb', href: 'diseno-circuitos-y-placas-pcb.html#pcb-circuitos', label: 'Diseño PCB / Circuitos' },
     { id: 'firmware', href: 'firmware.html', label: 'Firmware' },
+    { id: 'proyectos', href: 'proyectos.html', label: 'Proyectos' },
     { id: 'contacto', href: 'contacto.html', label: 'Contacto' }
   ];
 
