@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://electronics.kees-hessels.workers.dev/sitemap.xml
