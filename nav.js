@@ -32,7 +32,7 @@
   var html =
     '<header>' +
       '<nav class="wrap">' +
-        '<a href="index.html" class="logo"><span class="dot-g">\u25CD</span>Electr\u00F3nica <br class="logo-break">Santa Ana<span class="dot-c">\u25CD</span></a>' +
+        '<a href="index.html" class="logo"><img src="logo-mark-full.png" alt="Electr\u00F3nica Santa Ana" class="logo-img"></a>' +
         '<div class="nav-right">' +
           facebookIcon +
           '<button type="button" class="menu-toggle" aria-label="Abrir men\u00FA" aria-expanded="false" aria-controls="site-navlinks">' +

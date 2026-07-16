@@ -12,12 +12,11 @@ header{
 }
 nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
 .logo{
-  display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:700;
-  font-size:17px; letter-spacing:0.02em; text-decoration:none;
+  display:flex; align-items:center; text-decoration:none;
 }
-.logo .dot-g{color:var(--green-bright);}
-.logo .dot-c{color:var(--copper-bright);}
-.logo-break{display:none;}
+.logo-img{
+  display:block; height:38px; width:auto; max-width:none;
+}
 
 .nav-right{display:flex; align-items:center; gap:20px;}
 
@@ -72,8 +71,7 @@ nav.wrap{display:flex; align-items:center; justify-content:space-between; paddin
 
 @media(max-width:780px){
   .menu-toggle{display:flex;}
-  .logo-break{display:inline;}
-  .logo{font-size:14px; line-height:1.25; text-align:left;}
+  .logo-img{height:28px;}
   .navlinks{
     display:none;
     position:absolute;
@@ -99,3 +97,5 @@ footer{
   max-width:1120px; margin:0 auto;
 }
 .footer-right{display:flex; align-items:center; gap:14px;}
+.footer-left{display:flex; align-items:center; gap:12px;}
+.footer-logo{display:block; height:22px; width:auto; max-width:none;}
