@@ -6,215 +6,164 @@
    already declared in each page's own :root block.
    ============================================================ */
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(17, 22, 26, 0.86);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+header{
+  position:sticky; top:0; z-index:50; background:rgba(17,22,26,0.86);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--line);
 }
-nav.wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 28px;
+nav.wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 28px;}
+.logo{
+  display:flex; align-items:center; text-decoration:none;
 }
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-.logo-img {
-  display: block;
-  height: 64px;
-  width: auto;
-  max-width: none;
+.logo-img{
+  display:block; height:38px; width:auto; max-width:none;
 }
 
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+.nav-right{display:flex; align-items:center; gap:20px;}
 
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--muted);
-  transition: color 0.2s;
-  flex: none;
+.social-link{
+  display:inline-flex; align-items:center; justify-content:center;
+  color:var(--muted); transition:color .2s; flex:none;
 }
-.social-link:hover,
-.social-link:focus-visible {
-  color: var(--cream);
-}
-.social-link:focus-visible {
-  outline: 2px solid var(--amber);
-  outline-offset: 3px;
-}
-.social-link svg {
-  width: 36px;
-  height: 36px;
-  display: block;
-}
+.social-link:hover, .social-link:focus-visible{color:var(--cream);}
+.social-link:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+.social-link svg{width:18px; height:18px; display:block;}
 
-.breadcrumb {
-  font-family: var(--mono);
-  font-size: 12.5px;
-  color: var(--muted);
-}
-.breadcrumb a {
-  text-decoration: underline;
-  text-decoration-color: var(--line);
-  text-underline-offset: 3px;
-}
+.breadcrumb{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+.breadcrumb a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
 
-.navlinks {
-  display: flex;
-  gap: 26px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-family: var(--mono);
-  font-size: 13px;
-}
-.navlinks a {
-  text-decoration: none;
-  color: var(--muted);
-  transition: color 0.2s;
-}
-.navlinks a:hover,
-.navlinks a:focus-visible {
-  color: var(--cream);
-}
-.navlinks a:focus-visible {
-  outline: 2px solid var(--amber);
-  outline-offset: 4px;
-}
+.navlinks{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-family:var(--mono); font-size:13px;}
+.navlinks a{text-decoration:none; color:var(--muted); transition:color .2s;}
+.navlinks a:hover, .navlinks a:focus-visible{color:var(--cream);}
+.navlinks a:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
 
 /* Emphasize the current page in the menu */
-.navlinks a.active {
-  color: var(--cream);
-  position: relative;
+.navlinks a.active{
+  color:var(--cream);
+  position:relative;
 }
-.navlinks a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -6px;
-  height: 2px;
-  background: var(--amber);
-  border-radius: 1px;
+.navlinks a.active::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:-6px;
+  height:2px;
+  background:var(--amber);
+  border-radius:1px;
+}
+
+/* Dropdown: "Diseño y Prototipo" */
+.has-dropdown{position:relative;}
+.dropdown-toggle{
+  display:flex; align-items:center; gap:6px;
+  background:none; border:none; cursor:pointer; padding:0;
+  font-family:var(--mono); font-size:13px; color:var(--muted);
+  transition:color .2s;
+}
+.dropdown-toggle:hover, .dropdown-toggle:focus-visible{color:var(--cream);}
+.dropdown-toggle:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
+.dropdown-toggle .chevron{width:13px; height:13px; transition:transform .2s ease;}
+.has-dropdown:hover .chevron,
+.has-dropdown.open .chevron{transform:rotate(180deg);}
+
+.dropdown-toggle.active{color:var(--cream); position:relative;}
+.dropdown-toggle.active::after{
+  content:"";
+  position:absolute;
+  left:0; right:18px; bottom:-6px;
+  height:2px;
+  background:var(--amber);
+  border-radius:1px;
+}
+
+.dropdown-menu{
+  display:none;
+  position:absolute; top:100%; left:0;
+  margin-top:14px; padding:8px;
+  min-width:230px;
+  list-style:none;
+  background:var(--panel); border:1px solid var(--line); border-radius:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  z-index:60;
+}
+/* Invisible bridge over the gap above the menu, so moving the mouse
+   from the toggle down into the menu doesn't drop out of :hover */
+.dropdown-menu::before{
+  content:"";
+  position:absolute;
+  top:-14px; left:0; right:0; height:14px;
+}
+.dropdown-menu li{width:auto;}
+.dropdown-menu a{
+  display:block; padding:10px 12px; border-radius:5px;
+  white-space:nowrap; font-size:13px;
+}
+.dropdown-menu a:hover, .dropdown-menu a:focus-visible{background:rgba(237,234,224,0.06);}
+
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown.open .dropdown-menu{
+  display:block;
 }
 
 /* Hamburger button — hidden on desktop, shown on mobile */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 36px;
-  height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  flex: none;
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  width:36px; height:36px;
+  background:none; border:none; cursor:pointer; padding:0; flex:none;
 }
-.menu-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--cream);
-  border-radius: 2px;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
+.menu-toggle span{
+  display:block; width:22px; height:2px; background:var(--cream); border-radius:2px;
+  transition:transform .2s ease, opacity .2s ease;
 }
-.menu-toggle:focus-visible {
-  outline: 2px solid var(--amber);
-  outline-offset: 4px;
-}
-.menu-toggle.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-.menu-toggle.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.menu-toggle:focus-visible{outline:2px solid var(--amber); outline-offset:4px;}
+.menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.menu-toggle.open span:nth-child(2){opacity:0;}
+.menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media(max-width:780px){
+  .menu-toggle{display:flex;}
+  .logo-img{height:28px;}
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:100%; left:0; right:0;
+    flex-direction:column;
+    gap:0;
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    padding:8px 28px 18px;
+    max-height:calc(100vh - 64px);
+    overflow-y:auto;
+  }
+  .navlinks.open{display:flex;}
+  .navlinks li{width:100%;}
+  .navlinks a{display:block; padding:14px 0; border-bottom:1px solid var(--line);}
+  .navlinks li:last-child a{border-bottom:none;}
+  .navlinks a.active::after{bottom:8px;}
+
+  .dropdown-toggle{
+    width:100%; justify-content:space-between;
+    padding:14px 0; border-bottom:1px solid var(--line);
+    font-size:13px;
+  }
+  .dropdown-toggle.active::after{bottom:8px; right:26px;}
+  .has-dropdown:hover .dropdown-menu{display:none;}
+  .has-dropdown.open .dropdown-menu{display:block;}
+  .dropdown-menu{
+    position:static; display:none;
+    margin:0 0 6px; padding:0 0 0 16px;
+    min-width:0; background:none; border:none; box-shadow:none;
+  }
+  .dropdown-menu a{padding:12px 0; color:var(--muted); font-size:12.5px;}
 }
 
-@media (max-width: 780px) {
-  .menu-toggle {
-    display: flex;
-  }
-  .logo-img {
-    height: 28px;
-  }
-  .navlinks {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    padding: 8px 28px 18px;
-    max-height: calc(100vh - 64px);
-    overflow-y: auto;
-  }
-  .navlinks.open {
-    display: flex;
-  }
-  .navlinks li {
-    width: 100%;
-  }
-  .navlinks a {
-    display: block;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .navlinks li:last-child a {
-    border-bottom: none;
-  }
-  .navlinks a.active::after {
-    bottom: 8px;
-  }
+footer{
+  border-top:1px solid var(--line); padding:26px 28px; font-family:var(--mono); font-size:12px;
+  color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  max-width:1120px; margin:0 auto;
 }
-
-footer {
-  border-top: 1px solid var(--line);
-  padding: 26px 28px;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 1120px;
-  margin: 0 auto;
-}
-.footer-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.footer-logo {
-  display: block;
-  height: 96px;
-  width: auto;
-  max-width: none;
-}
+.footer-right{display:flex; align-items:center; gap:14px;}
+.footer-left{display:flex; align-items:center; gap:12px;}
+.footer-logo{display:block; height:22px; width:auto; max-width:none;}
