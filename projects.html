@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTLJPNHBLH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CTLJPNHBLH');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Electrónica Santa Ana, CR</title>
+<meta name="description" content="Projects designed and built by Electrónica Santa Ana: from PCB production equipment to IoT prototypes. Santa Ana, Costa Rica.">
+<meta name="keywords" content="electronics projects, reverse-pulse electroplating, PCB design Costa Rica, electronics portfolio Santa Ana">
+<meta name="author" content="Electrónica Santa Ana">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://electronics.kees-hessels.workers.dev/projects.html">
+<link rel="alternate" hreflang="es" href="https://electronics.kees-hessels.workers.dev/proyectos">
+<link rel="alternate" hreflang="en" href="https://electronics.kees-hessels.workers.dev/projects.html">
+<link rel="alternate" hreflang="x-default" href="https://electronics.kees-hessels.workers.dev/proyectos">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://electronics.kees-hessels.workers.dev/projects.html">
+<meta property="og:title" content="Projects | Electrónica Santa Ana">
+<meta property="og:description" content="Equipment and systems we've designed and built, from PCB production to IoT prototypes.">
+<meta property="og:image" content="https://electronics.kees-hessels.workers.dev/proyecto-galvanoplastia.png">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Projects | Electrónica Santa Ana">
+<meta name="twitter:description" content="Equipment and systems we've designed and built, from PCB production to IoT prototypes.">
+<meta name="twitter:image" content="https://electronics.kees-hessels.workers.dev/proyecto-galvanoplastia.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Reverse-pulse electroplating machine for PCB development",
+  "creator": {
+    "@type": "ElectronicsStore",
+    "name": "Electrónica Santa Ana"
+  },
+  "about": "Power electronics equipment that generates and controls the reverse-pulse pattern used during PCB electroplating.",
+  "image": "https://electronics.kees-hessels.workers.dev/proyecto-galvanoplastia.png"
+}
+</script>
+
+<link rel="stylesheet" href="site-shared.css">
+<style>
+  :root{
+    --bg:#11161a;
+    --panel:#171f24;
+    --line:#2a353c;
+    --green-bright:#49b98c;
+    --copper:#c17a4a;
+    --copper-bright:#e6a468;
+    --cream:#edeae0;
+    --muted:#8b98a0;
+    --amber:#e8a33d;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0; background:var(--bg); color:var(--cream); font-family:var(--sans);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  body::before{
+    content:""; position:fixed; inset:0;
+    background-image: radial-gradient(circle, rgba(139,152,160,0.10) 1px, transparent 1px);
+    background-size: 26px 26px; pointer-events:none; z-index:0;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--muted); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--amber); box-shadow:0 0 8px var(--amber); flex:none;
+  }
+
+  .breadcrumb{font-family:var(--mono); font-size:12.5px; color:var(--muted);}
+  .breadcrumb a{text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px;}
+
+  .hero{padding:72px 28px 64px;}
+  .hero h1{
+    font-family:var(--mono); font-weight:800; color:var(--copper-bright);
+    font-size:clamp(30px,5vw,50px); line-height:1.1; margin:20px 0 0; letter-spacing:-0.01em;
+  }
+  .hero p.lede{font-size:17px; color:var(--muted); max-width:640px; margin:22px 0 0;}
+
+  section{padding:0 0 84px; scroll-margin-top:84px;}
+  .section-head{max-width:680px; margin-bottom:36px;}
+  .section-head h2{font-family:var(--mono); font-size:clamp(22px,3vw,30px); margin:14px 0 12px; font-weight:700;}
+  .section-head p{color:var(--muted); font-size:15.5px; margin:0;}
+
+  .project-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:8px; overflow:hidden;
+  }
+  .project-media img{width:100%; display:block;}
+  .project-body{padding:32px;}
+  .project-body h3{font-family:var(--mono); font-size:clamp(20px,2.6vw,26px); margin:8px 0 16px; color:var(--cream);}
+  .project-body p{font-size:15px; color:var(--muted); margin:0 0 16px; max-width:70ch;}
+  .project-body p:last-child{margin-bottom:0;}
+
+  .spec-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px;
+    margin-top:24px;
+  }
+  .spec{
+    border:1px solid var(--line); border-radius:6px; padding:16px 18px; background:var(--bg);
+  }
+  .spec .spec-label{font-family:var(--mono); font-size:11.5px; color:var(--copper-bright); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px;}
+  .spec .spec-value{font-size:14px; color:var(--cream);}
+
+  .timeline{list-style:none; margin:24px 0 0; padding:0; border-top:1px solid var(--line);}
+  .timeline li{
+    display:grid; grid-template-columns:120px 1fr; gap:16px;
+    padding:12px 0; border-bottom:1px solid var(--line); font-size:13.5px;
+  }
+  .timeline .tdate{font-family:var(--mono); color:var(--muted); white-space:nowrap;}
+  .timeline .tnote{color:var(--cream);}
+
+  .tag{
+    display:inline-block; font-family:var(--mono); font-size:11.5px; color:var(--copper-bright);
+    border:1px solid var(--copper); border-radius:20px; padding:4px 12px; margin:0 8px 8px 0;
+  }
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
+  .soon-card{
+    background:var(--panel); border:1px dashed var(--line); border-radius:8px;
+    padding:32px 24px; text-align:center; color:var(--muted);
+  }
+  .soon-card svg{width:30px; height:30px; margin:0 auto 14px; color:var(--muted);}
+  .soon-card h3{font-family:var(--mono); font-size:14.5px; color:var(--cream); margin:0 0 6px; font-weight:600;}
+  .soon-card p{font-size:13px; margin:0;}
+
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap; margin-top:32px;}
+  .btn{
+    font-family:var(--mono); font-size:13.5px; letter-spacing:0.03em; padding:14px 22px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px; border-radius:3px;
+    border:1px solid transparent; transition:transform .15s ease, background .15s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  .btn-copper{background:var(--copper); color:#241505; border-color:#d68d5e;}
+  .btn-copper:hover{background:#cf8a57; transform:translateY(-1px);}
+</style>
+</head>
+<body data-page="proyectos" data-lang="en" data-alt-href="proyectos.html">
+<script src="nav.js"></script>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="breadcrumb"><a href="index-en.html">Electrónica Santa Ana</a> / Projects</p>
+    <p class="eyebrow" style="margin-top:18px;">Portfolio — Santa Ana, Costa Rica</p>
+    <h1>Projects we've designed and built.</h1>
+    <p class="lede">A sample of the equipment and systems we're currently working on, which we'll keep adding to over time.</p>
+  </section>
+
+  <section id="galvanoplastia">
+    <div class="section-head">
+      <p class="eyebrow">Current project — 2026</p>
+      <h2>Reverse-pulse electroplating machine for PCB development</h2>
+      <p>Power electronics equipment we designed and built ourselves, used in our own board production process.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-media">
+        <img src="proyecto-galvanoplastia.png" alt="Circuit board of the reverse-pulse electroplating machine, showing the voltage regulation, H-bridge, current control, and STM32 microcontroller sections">
+      </div>
+      <div class="project-body">
+        <span class="tag">Power electronics</span>
+        <span class="tag">H-bridge · 24V / 10A</span>
+        <span class="tag">STM32G474</span>
+        <span class="tag">In-house PCB design</span>
+
+        <h3>What it does</h3>
+        <p>When electroplating a PCB, the electrical pattern used during the process matters just as much as the chemistry: a poorly controlled pulse produces an uneven or poor-quality copper deposit. This machine generates and controls that pattern — including reverse pulses — so the plating process is precise and repeatable.</p>
+        <p>The board shown is the final result we designed and built: it includes its own power stage (H-bridge with up to 10A output at 24V), multi-rail voltage regulation (+24V, +5V, +3V3, and a negative -5V rail for the op-amps), real-time voltage and current feedback to control the process, and an STM32G474 microcontroller that coordinates the entire cycle.</p>
+
+        <h3 style="margin-top:32px;">Technical specs</h3>
+        <div class="spec-grid">
+          <div class="spec">
+            <div class="spec-label">Input</div>
+            <div class="spec-value">24V, up to 10A</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Power stage</div>
+            <div class="spec-value">H-bridge with reverse-pulse output</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Control</div>
+            <div class="spec-value">STM32G474CEUx</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Regulation</div>
+            <div class="spec-value">+24V, +5V, +3V3, -5V (negative rail)</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Feedback</div>
+            <div class="spec-value">Voltage and current, in real time</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Interfaces</div>
+            <div class="spec-value">USB-C, serial, I2C</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Indication</div>
+            <div class="spec-value">Audible piezo, control buttons</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Protection</div>
+            <div class="spec-value">Polyfuse on the 24V input</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:32px;">Revision history</h3>
+        <p style="margin-bottom:0;">The design has evolved in stages, adding functionality as the production process demanded it.</p>
+        <ul class="timeline">
+          <li><span class="tdate">Dec 8 '25</span><span class="tnote">Initial design</span></li>
+          <li><span class="tdate">Jan 11 '26</span><span class="tnote">Added SD card and improved layout</span></li>
+          <li><span class="tdate">May 23 '26</span><span class="tnote">Added I2C connector</span></li>
+          <li><span class="tdate">Jun 27 '26</span><span class="tnote">Change to the H-bridge design</span></li>
+          <li><span class="tdate">Jul 1 '26</span><span class="tnote">Added enable delay</span></li>
+          <li><span class="tdate">Jul 5 '26</span><span class="tnote">Added piezo indicator</span></li>
+          <li><span class="tdate">Jul 10 '26</span><span class="tnote">Added ADC reading</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="fuente-programable">
+    <div class="section-head">
+      <p class="eyebrow">Earlier project</p>
+      <h2>High-resolution programmable power supply, 0–12V</h2>
+      <p>A digitally controlled bench power supply, with software-based voltage and current adjustment and measurement.</p>
+    </div>
+
+    <div class="project-card">
+      <div class="project-media">
+        <img src="proyecto-fuente-programable.png" alt="Circuit board of the programmable power supply, showing the voltage/current set and measure sections, the -5V rail, and the WEMOS LOLIN32 module">
+      </div>
+      <div class="project-body">
+        <span class="tag">Bench power supply</span>
+        <span class="tag">0–12V programmable</span>
+        <span class="tag">ESP32 control</span>
+        <span class="tag">High resolution</span>
+
+        <h3>What it does</h3>
+        <p>This power supply lets you set and measure output voltage and current digitally, instead of with manual potentiometers. An ESP32 module (WEMOS LOLIN32) governs the setpoint and reads the actual measurement for both voltage and current, allowing high-resolution control over the 0–12V output.</p>
+        <p>The design includes its own precision reference for the set and measure circuits, a -5V rail generated with a switched-capacitor voltage inverter (ICL7660) to power the op-amps, and +3V3 regulation for the control logic. Output current is measured via a shunt resistor.</p>
+
+        <h3 style="margin-top:32px;">Technical specs</h3>
+        <div class="spec-grid">
+          <div class="spec">
+            <div class="spec-label">Output</div>
+            <div class="spec-value">0–12V, programmable</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Control</div>
+            <div class="spec-value">ESP32 (WEMOS LOLIN32)</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Set and measure</div>
+            <div class="spec-value">Voltage and current, via software</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Current sensing</div>
+            <div class="spec-value">Shunt resistor</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Auxiliary rails</div>
+            <div class="spec-value">+3V3, -5V (switched-capacitor inverter)</div>
+          </div>
+          <div class="spec">
+            <div class="spec-label">Reference</div>
+            <div class="spec-value">Precision Vref / Cref</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="otros-proyectos">
+    <div class="section-head">
+      <p class="eyebrow">Upcoming projects</p>
+      <h2>More projects on the way</h2>
+      <p>This portfolio will keep getting updated with every new piece of equipment we design and build.</p>
+    </div>
+    <div class="grid">
+      <div class="soon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Coming soon</h3>
+        <p>We're preparing more projects to show here.</p>
+      </div>
+      <div class="soon-card">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>
+        <h3>Coming soon</h3>
+        <p>Have a project in mind? Tell us what you need.</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-copper" href="contact.html">Let's talk about your project →</a>
+    </div>
+  </section>
+
+</main>
+
+<script src="footer.js"></script>
+</body>
+</html>

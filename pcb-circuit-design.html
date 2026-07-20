@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CTLJPNHBLH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CTLJPNHBLH');
+</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit, PCB, and Enclosure Design | IoT Prototyping — Electrónica Santa Ana, CR</title>
+<meta name="description" content="We design electronic circuits, custom PCBs and enclosures, and build functional prototypes. IoT design service in Santa Ana, Costa Rica.">
+<meta name="keywords" content="PCB design Costa Rica, electronic circuit design, enclosure design, electronics prototyping, IoT design Santa Ana">
+<meta name="author" content="Electrónica Santa Ana">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://electronics.kees-hessels.workers.dev/pcb-circuit-design.html">
+<link rel="alternate" hreflang="es" href="https://electronics.kees-hessels.workers.dev/diseno-circuitos-y-placas-pcb">
+<link rel="alternate" hreflang="en" href="https://electronics.kees-hessels.workers.dev/pcb-circuit-design.html">
+<link rel="alternate" hreflang="x-default" href="https://electronics.kees-hessels.workers.dev/diseno-circuitos-y-placas-pcb">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://electronics.kees-hessels.workers.dev/pcb-circuit-design.html">
+<meta property="og:title" content="Circuit, PCB, and Enclosure Design | Electrónica Santa Ana">
+<meta property="og:description" content="We design circuits, PCBs and enclosures, and build functional prototypes. Santa Ana, Costa Rica.">
+<meta property="og:image" content="https://electronics.kees-hessels.workers.dev/og-image.jpg">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Circuit, PCB, and Enclosure Design | Electrónica Santa Ana">
+<meta name="twitter:description" content="We design circuits, PCBs and enclosures, and build functional prototypes in Santa Ana, Costa Rica.">
+<meta name="twitter:image" content="https://electronics.kees-hessels.workers.dev/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "IoT, PCB, and enclosure design",
+  "provider": {
+    "@type": "ElectronicsStore",
+    "name": "Electrónica Santa Ana",
+    "telephone": "+506-6324-9284",
+    "email": "kees.hessels@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Santa Ana Centro, next to Pops, house with two floors, black gate",
+      "addressLocality": "Santa Ana",
+      "addressRegion": "San José",
+      "addressCountry": "CR"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Santa Ana, Costa Rica"
+  },
+  "description": "Design of electronic circuits, PCBs, custom enclosures, and construction of functional prototypes."
+}
+</script>
+
+<style>
+  :root{
+    --bg:#11161a;
+    --panel:#171f24;
+    --line:#2a353c;
+    --copper:#c17a4a;
+    --copper-bright:#e6a468;
+    --green-bright:#49b98c;
+    --cream:#edeae0;
+    --muted:#8b98a0;
+    --amber:#e8a33d;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0; background:var(--bg); color:var(--cream); font-family:var(--sans);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  body::before{
+    content:""; position:fixed; inset:0;
+    background-image: radial-gradient(circle, rgba(139,152,160,0.10) 1px, transparent 1px);
+    background-size: 26px 26px; pointer-events:none; z-index:0;
+  }
+  .wrap{max-width:1120px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--muted); display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background:var(--amber); box-shadow:0 0 8px var(--amber); flex:none;
+  }
+
+  .hero{padding:72px 28px 80px;}
+  .hero h1{
+    font-family:var(--mono); font-weight:800; color:var(--copper-bright);
+    font-size:clamp(30px,5vw,50px); line-height:1.1; margin:20px 0 0; letter-spacing:-0.01em;
+  }
+  .hero p.lede{font-size:17px; color:var(--muted); max-width:600px; margin:22px 0 36px;}
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono); font-size:13.5px; letter-spacing:0.03em; padding:14px 22px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:10px; border-radius:3px;
+    border:1px solid transparent; transition:transform .15s ease, background .15s ease;
+  }
+  .btn:focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  .btn-copper{background:var(--copper); color:#241505; border-color:#d68d5e;}
+  .btn-copper:hover{background:#cf8a57; transform:translateY(-1px);}
+  .btn-ghost{background:transparent; color:var(--copper-bright); border-color:var(--copper);}
+  .btn-ghost:hover{background:rgba(193,122,74,0.12); transform:translateY(-1px);}
+
+  section{padding:80px 0; border-top:1px solid var(--line); scroll-margin-top:84px;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-family:var(--mono); font-size:clamp(24px,3.4vw,34px); margin:14px 0 12px; font-weight:700;}
+  .section-head p{color:var(--muted); font-size:15.5px; margin:0;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:18px;}
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:26px 22px;
+    transition:transform .18s ease, border-color .18s ease;
+  }
+  .card:hover{transform:translateY(-3px); border-color:var(--copper-bright);}
+  .card .icon{width:36px; height:36px; margin-bottom:16px; color:var(--copper-bright);}
+  .card h3{font-family:var(--mono); font-size:16px; margin:0 0 8px; font-weight:600;}
+  .card p{font-size:14px; color:var(--muted); margin:0 0 12px;}
+  .card ul{margin:0; padding-left:18px; font-size:13.5px; color:var(--muted);}
+  .card li{margin-bottom:4px;}
+
+  .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0;}
+  .step{padding:26px 22px 26px 0; border-right:1px solid var(--line);}
+  .step:last-child{border-right:none;}
+  .step .num{font-family:var(--mono); font-size:13px; color:var(--muted); letter-spacing:0.1em;}
+  .step h3{font-family:var(--mono); font-size:16px; margin:10px 0 8px;}
+  .step p{font-size:14px; color:var(--muted); margin:0;}
+  @media(max-width:760px){ .step{border-right:none; border-bottom:1px solid var(--line); padding:22px 0;} }
+</style>
+<link rel="stylesheet" href="site-shared.css">
+</head>
+<body data-page="pcb" data-lang="en" data-alt-href="diseno-circuitos-y-placas-pcb.html">
+<script src="nav.js"></script>
+
+<main class="wrap">
+
+  <section class="hero" style="border-top:none; padding-top:56px;">
+    <p class="breadcrumb"><a href="index-en.html">Electrónica Santa Ana</a> / IoT &amp; PCB Design</p>
+    <p class="eyebrow" style="margin-top:18px;">Design service — Santa Ana, Costa Rica</p>
+    <h1>We design circuits, PCBs, and enclosures. We build the prototype.</h1>
+    <p class="lede">We take your idea from schematic to a working physical device: circuit, board, and custom enclosure, tested in-shop before delivery.</p>
+    <div class="cta-row">
+      <a class="btn btn-copper" href="https://wa.me/50663249284?text=Hi%2C%20I%27d%20like%20to%20get%20a%20quote%20for%20a%20circuit%2FPCB%2Fenclosure%20design." target="_blank" rel="noopener">Get a quote on WhatsApp →</a>
+      <a class="btn btn-ghost" href="contact.html">See form</a>
+    </div>
+  </section>
+
+  <section id="pcb-circuitos">
+    <div class="section-head">
+      <p class="eyebrow">01 — PCB / Circuit Design</p>
+      <h2>From schematic to manufactured board</h2>
+      <p>We define the complete electrical architecture and turn it into a board ready for production.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10" cy="10" r="4"/><circle cx="30" cy="10" r="4"/><circle cx="10" cy="30" r="4"/><circle cx="30" cy="30" r="4"/><line x1="14" y1="10" x2="26" y2="10"/><line x1="10" y1="14" x2="10" y2="26"/><line x1="30" y1="14" x2="30" y2="26"/><line x1="14" y1="30" x2="26" y2="30"/></svg>
+        <h3>Schematic</h3>
+        <p>Component selection and complete electrical design, ready for review.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="10" width="28" height="20" rx="2"/><line x1="14" y1="30" x2="14" y2="34"/><line x1="26" y1="30" x2="26" y2="34"/><line x1="12" y1="16" x2="20" y2="16"/><line x1="12" y1="22" x2="24" y2="22"/></svg>
+        <h3>Power supply</h3>
+        <p>Regulators, batteries, and low-power energy management.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="10" y="10" width="20" height="20" rx="2"/><rect x="16" y="16" width="8" height="8"/><line x1="10" y1="16" x2="4" y2="16"/><line x1="10" y1="24" x2="4" y2="24"/><line x1="30" y1="16" x2="36" y2="16"/><line x1="30" y1="24" x2="36" y2="24"/></svg>
+        <h3>Layer routing</h3>
+        <p>Single- or multi-layer boards, depending on circuit complexity.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="6" width="24" height="28" rx="2"/><line x1="13" y1="13" x2="27" y2="13"/><line x1="13" y1="19" x2="27" y2="19"/><line x1="13" y1="25" x2="21" y2="25"/></svg>
+        <h3>Manufacturing files</h3>
+        <p>Gerbers, BOM, and documentation ready to send to manufacturing.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 20 L16 12 L16 16 L28 16 L28 24 L16 24 L16 28 Z"/></svg>
+        <h3>Pre-manufacturing review</h3>
+        <p>Design rule checks to avoid costly errors in production.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="carcasas">
+    <div class="section-head">
+      <p class="eyebrow">02 — Enclosures</p>
+      <h2>Custom enclosure design</h2>
+      <p>We design the case that protects and presents your device: board mounting, ventilation, buttons, and connectors in the right place.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="26" height="26" rx="4"/><rect x="14" y="14" width="12" height="12" rx="2"/></svg>
+        <h3>3D modeling</h3>
+        <p>Enclosure design fitted to the board and its internal components.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4 L34 12 L34 28 L20 36 L6 28 L6 12 Z"/><line x1="20" y1="4" x2="20" y2="36"/></svg>
+        <h3>3D printing</h3>
+        <p>Resin- or filament-printed enclosures for prototypes and short runs.</p>
+      </div>
+      <div class="card">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="22" height="22" rx="3"/><circle cx="20" cy="20" r="4"/><line x1="20" y1="9" x2="20" y2="13"/><line x1="20" y1="27" x2="20" y2="31"/></svg>
+        <h3>Ergonomics and finish</h3>
+        <p>Button, port, and ventilation placement designed for real-world use.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="prototipos">
+    <div class="section-head">
+      <p class="eyebrow">03 — Prototypes</p>
+      <h2>From idea to a working device</h2>
+      <p>We build and test the complete prototype — circuit, board, and enclosure — before thinking about production.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01 — BRIEF</div>
+        <h3>What your product needs</h3>
+        <p>We talk through the problem to solve and the conditions of use.</p>
+      </div>
+      <div class="step">
+        <div class="num">02 — DESIGN</div>
+        <h3>Circuit, PCB, and enclosure</h3>
+        <p>We design all three parts together, not separately.</p>
+      </div>
+      <div class="step">
+        <div class="num">03 — BUILD</div>
+        <h3>Prototype assembly</h3>
+        <p>We build the first physical unit with the finalized files.</p>
+      </div>
+      <div class="step">
+        <div class="num">04 — TEST</div>
+        <h3>Functional validation</h3>
+        <p>We test the prototype under real conditions before delivery.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="footer.js"></script>
+</body>
+</html>
