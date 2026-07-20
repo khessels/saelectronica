@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CIRCUITO — Custom electronics & IoT design, Santa Ana, Costa Rica</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --graphite:#14171c;
+    --paper:#f3efe3;
+    --paper2:#ece6d4;
+    --copper:#ab6234;
+    --copper-dark:#7c491f;
+    --teal:#3d6a63;
+    --teal-light:#5c8f86;
+    --ink:#20242a;
+    --muted:#6f7568;
+    --line:#d8d2bf;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"IBM Plex Sans",Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:26px 26px;
+  }
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:"IBM Plex Mono",monospace;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;}
+
+  /* ---------------- nav ---------------- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:var(--graphite);
+    border-bottom:3px solid var(--copper);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;padding:16px 32px;max-width:1080px;margin:0 auto;}
+  .wordmark{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:20px;letter-spacing:1.5px;color:var(--paper);}
+  .wordmark .dot{color:var(--copper);}
+  .navlinks{display:flex;gap:28px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:0.4px;}
+  .navlinks a{color:#c7c2b2;transition:color .15s;}
+  .navlinks a:hover{color:var(--paper);}
+  .navlinks a.cta{color:var(--copper);border:1px solid var(--copper);padding:6px 12px;}
+  .navlinks a.cta:hover{background:var(--copper);color:var(--graphite);}
+  .navtoggle{display:none;}
+
+  /* ---------------- hero ---------------- */
+  .hero{padding:76px 0 64px;}
+  .hero-inner{display:flex;gap:48px;align-items:center;}
+  .hero-copy{flex:0 0 42%;}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;color:var(--copper-dark);margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+  .eyebrow::before{content:"";width:22px;height:2px;background:var(--copper);display:inline-block;}
+  h1{font-family:"IBM Plex Mono",monospace;font-weight:700;font-size:40px;line-height:1.22;color:var(--graphite);letter-spacing:-0.5px;}
+  .hero-copy p{margin-top:20px;font-size:15.5px;line-height:1.65;color:var(--ink);max-width:44ch;}
+  .hero-actions{margin-top:30px;display:flex;gap:16px;align-items:center;}
+  .btn{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;letter-spacing:.3px;
+    background:var(--graphite);color:var(--paper);padding:13px 22px;border:2px solid var(--graphite);
+    display:inline-flex;align-items:center;gap:8px;transition:.15s;
+  }
+  .btn:hover{background:var(--copper);border-color:var(--copper);color:var(--graphite);}
+  .btn.ghost{background:transparent;color:var(--graphite);}
+  .btn.ghost:hover{background:var(--graphite);color:var(--paper);}
+  .hero-diagram{flex:1;min-width:0;}
+  .hero-diagram svg{width:100%;height:auto;overflow:visible;}
+
+  .pulse{
+    r:4.2;fill:var(--copper);
+    offset-distance:0%;
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .pulse{ animation: travel 3.6s linear infinite; }
+  }
+  @keyframes travel{
+    0%{ offset-distance:0%; opacity:0; }
+    6%{ opacity:1; }
+    94%{ opacity:1; }
+    100%{ offset-distance:100%; opacity:0;}
+  }
+
+  /* ---------------- section shell ---------------- */
+  section{padding:58px 0;}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:34px;}
+  .section-head .tag{
+    font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;
+    color:var(--copper-dark);font-weight:600;white-space:nowrap;
+  }
+  .section-head .rule{flex:1;height:1px;background:var(--line);border-top:1px dashed #b7b09a;}
+  .section-title{font-family:"IBM Plex Mono",monospace;font-size:26px;font-weight:700;color:var(--graphite);margin-bottom:8px;}
+
+  /* ---------------- what we build ---------------- */
+  #build{border-top:1px solid var(--line);}
+  .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 40px;margin-top:28px;}
+  .cap-item{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);}
+  .cap-marker{width:11px;height:11px;background:var(--teal);transform:rotate(45deg);margin-top:6px;flex-shrink:0;}
+  .cap-item b{font-size:16px;color:var(--graphite);}
+  .cap-item p{margin-top:5px;font-size:13.8px;color:var(--muted);line-height:1.55;}
+
+  /* ---------------- recent work ---------------- */
+  #work{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px;}
+  .proof{background:#fbf9f2;border:1px solid var(--line);border-left:4px solid var(--copper);padding:20px 20px 22px;}
+  .proof .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:1px;color:var(--teal);text-transform:uppercase;margin-bottom:10px;display:block;}
+  .proof b{font-size:15px;color:var(--graphite);display:block;margin-bottom:8px;}
+  .proof p{font-size:13.3px;line-height:1.6;color:var(--ink);}
+
+  /* ---------------- why local ---------------- */
+  #why .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:28px;}
+  .why-item{padding-left:20px;position:relative;}
+  .why-item::before{content:"—";position:absolute;left:0;top:0;color:var(--copper);font-weight:700;}
+  .why-item b{display:block;font-size:15px;color:var(--graphite);margin-bottom:6px;}
+  .why-item p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+  /* ---------------- contact ---------------- */
+  #contact{
+    background:var(--graphite);color:var(--paper);
+    border-top:3px solid var(--copper);
+  }
+  #contact .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+  #contact h2{font-family:"IBM Plex Mono",monospace;font-size:26px;font-weight:700;max-width:16ch;line-height:1.3;}
+  #contact .details{font-family:"IBM Plex Mono",monospace;font-size:13px;color:#b9b4a4;line-height:2;text-align:right;}
+  #contact .details a{color:var(--paper);border-bottom:1px solid var(--copper);}
+  #contact .details a:hover{color:var(--copper);}
+
+  footer{
+    background:var(--graphite);color:#7a7d72;
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.6px;
+    padding:16px 0 22px;text-align:center;
+  }
+
+  @media (max-width:860px){
+    .navlinks{display:none;}
+    .hero-inner{flex-direction:column;}
+    .hero-copy{flex:none;}
+    h1{font-size:32px;}
+    .cap-grid{grid-template-columns:1fr;}
+    .work-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    #contact .wrap{flex-direction:column;align-items:flex-start;text-align:left;}
+    #contact .details{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="wordmark">CIRCUITO<span class="dot">.</span></a>
+    <div class="navlinks">
+      <a href="#build">What we build</a>
+      <a href="#work">Recent work</a>
+      <a href="#why">Why local</a>
+      <a href="#contact" class="cta">Talk about a project</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow">Santa Ana, Costa Rica</div>
+        <h1>The hardware bench behind your IoT stack.</h1>
+        <p>We design and build the electronics your platform sits on top of — sensor front ends, custom PCBs, and firmware — in small batches, on Costa Rican time, with no overseas MOQ or lead time.</p>
+        <div class="hero-actions">
+          <a class="btn" href="mailto:kees.hessels@gmail.com?subject=Project inquiry">Talk about a project</a>
+          <a class="btn ghost" href="#build">See what we build ↓</a>
+        </div>
+      </div>
+      <div class="hero-diagram">
+        <svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg">
+          <path id="trace" d="M20 80 L540 80" stroke="#c8c1a8" stroke-width="1.5" stroke-dasharray="3,4" fill="none"/>
+          <circle class="pulse" r="4.5" style="offset-path:path('M20 80 L540 80');"></circle>
+
+          <rect x="20" y="55" width="76" height="52" fill="none" stroke="#3d6a63" stroke-width="2"/>
+          <text x="58" y="78" class="mono" font-size="9.5" fill="#20242a" text-anchor="middle" font-family="IBM Plex Mono, monospace">SENSOR /</text>
+          <text x="58" y="90" class="mono" font-size="9.5" fill="#20242a" text-anchor="middle" font-family="IBM Plex Mono, monospace">ANTENNA</text>
+
+          <path d="M96 80 L134 80" stroke="#20242a" stroke-width="1.5"/>
+          <polygon points="134,80 126,75.5 126,84.5" fill="#20242a"/>
+
+          <rect x="136" y="43" width="106" height="76" fill="none" stroke="#ab6234" stroke-width="2"/>
+          <text x="189" y="72" class="mono" font-size="9.5" fill="#20242a" text-anchor="middle" font-family="IBM Plex Mono, monospace">BANDPASS +</text>
+          <text x="189" y="85" class="mono" font-size="9.5" fill="#20242a" text-anchor="middle" font-family="IBM Plex Mono, monospace">RECTIFIER</text>
+          <text x="189" y="102" font-size="7.8" fill="#6f7568" text-anchor="middle" font-family="IBM Plex Mono, monospace">analog front end</text>
+
+          <path d="M242 80 L280 80" stroke="#20242a" stroke-width="1.5"/>
+          <polygon points="280,80 272,75.5 272,84.5" fill="#20242a"/>
+
+          <rect x="282" y="43" width="106" height="76" fill="none" stroke="#3d6a63" stroke-width="2"/>
+          <text x="335" y="72" class="mono" font-size="9.5" fill="#20242a" text-anchor="middle" font-family="IBM Plex Mono, monospace">MCU + ADC</text>
+          <text x="335" y="85" class="mono" font-size="9.5" fill="#20242a" text-anchor="middle" font-family="IBM Plex Mono, monospace">calibration</text>
+          <text x="335" y="102" font-size="7.8" fill="#6f7568" text-anchor="middle" font-family="IBM Plex Mono, monospace">ESP32 / STM32 firmware</text>
+
+          <path d="M388 80 L426 80" stroke="#20242a" stroke-width="1.5"/>
+          <polygon points="426,80 418,75.5 418,84.5" fill="#20242a"/>
+
+          <rect x="428" y="55" width="112" height="52" fill="none" stroke="#ab6234" stroke-width="2" stroke-dasharray="4,3"/>
+          <text x="484" y="78" class="mono" font-size="9.5" fill="#20242a" text-anchor="middle" font-family="IBM Plex Mono, monospace">YOUR PLATFORM</text>
+          <text x="484" y="92" font-size="7.8" fill="#6f7568" text-anchor="middle" font-family="IBM Plex Mono, monospace">integration layer</text>
+
+          <text x="58" y="135" font-size="8.5" fill="#6f7568" text-anchor="middle" font-family="IBM Plex Mono, monospace">field</text>
+          <text x="189" y="135" font-size="8.5" fill="#6f7568" text-anchor="middle" font-family="IBM Plex Mono, monospace">CIRCUITO builds this</text>
+          <text x="335" y="135" font-size="8.5" fill="#6f7568" text-anchor="middle" font-family="IBM Plex Mono, monospace">and this</text>
+          <text x="484" y="135" font-size="8.5" fill="#6f7568" text-anchor="middle" font-family="IBM Plex Mono, monospace">you already have this</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="build">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">What we build</span><span class="rule"></span></div>
+      <div class="cap-grid">
+        <div class="cap-item">
+          <div class="cap-marker"></div>
+          <div><b>PCB design, schematic to layout</b><p>Custom boards for sensing, control, or power — sized for prototype and low-volume runs, not mass production.</p></div>
+        </div>
+        <div class="cap-item">
+          <div class="cap-marker"></div>
+          <div><b>Analog front-end &amp; signal conditioning</b><p>Filter stages, precision rectifiers, and sensor interfacing for RF, EMF, and other low-level analog signals.</p></div>
+        </div>
+        <div class="cap-item">
+          <div class="cap-marker"></div>
+          <div><b>Embedded firmware</b><p>ESP32 / Arduino-class work, plus bare-metal, register-level C on STM32 when you need full control of the hardware.</p></div>
+        </div>
+        <div class="cap-item">
+          <div class="cap-marker"></div>
+          <div><b>Calibration &amp; test tooling</b><p>Custom scripts and jigs (PyVISA/PySerial) to characterize and correct ADC nonlinearity and validate boards before they ship.</p></div>
+        </div>
+        <div class="cap-item">
+          <div class="cap-marker"></div>
+          <div><b>Repair, rework &amp; failure diagnosis</b><p>Board-level troubleshooting and rework on consumer and industrial electronics — the same bench we run day to day.</p></div>
+        </div>
+        <div class="cap-item">
+          <div class="cap-marker"></div>
+          <div><b>One partner, full loop</b><p>Schematic, layout, firmware, and bring-up from a single shop — no coordinating separate vendors.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">Recent bench work</span><span class="rule"></span></div>
+      <div class="work-grid">
+        <div class="proof">
+          <span class="k">RF / EMF sensing</span>
+          <b>Long-range EMF/RF sensor</b>
+          <p>Custom analog front end — bandpass filter, precision rectifier, low-noise power supply — driving an ESP32 ADC, tuned for roughly 200 m detection range.</p>
+        </div>
+        <div class="proof">
+          <span class="k">Test tooling</span>
+          <b>ADC calibration system</b>
+          <p>PyVISA/PySerial tooling paired with companion firmware to characterize and correct ADC nonlinearity via curve fitting — built to validate boards, not just design them.</p>
+        </div>
+        <div class="proof">
+          <span class="k">Embedded firmware</span>
+          <b>Bare-metal STM32F405 firmware</b>
+          <p>Register/HAL-level C, including a workflow that scaffolds peripheral init code directly from KiCad schematics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head"><span class="tag">Why work with a local shop</span><span class="rule"></span></div>
+      <div class="why-grid">
+        <div class="why-item"><b>No overseas MOQ</b><p>Prototypes and short runs are the normal job here, not a special case.</p></div>
+        <div class="why-item"><b>Same time zone</b><p>Fast turnaround, and in-person visits when a board needs a second pair of eyes.</p></div>
+        <div class="why-item"><b>One partner</b><p>Schematic, layout, firmware, and bring-up — instead of coordinating separate vendors.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2>Have a hardware gap in your IoT project?</h2>
+      <div class="details">
+        Kees Hessels<br>
+        <a href="mailto:kees.hessels@gmail.com">kees.hessels@gmail.com</a><br>
+        Santa Ana, Costa Rica
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>CIRCUITO — ELECTRONICS &amp; IoT DESIGN — SANTA ANA, COSTA RICA</footer>
+
+</body>
+</html>
